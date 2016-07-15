@@ -1,5 +1,27 @@
-body {
+body{
     font-family: 'Montserrat', sans-serif;
+    font-size: 21px;
+    background-color: var(--siteBGColor);
+}
+
+.navbar-brand,
+.navbar-nav li a {
+    line-height: 100px;
+    height: 100px;
+    padding-top: 0;
+}
+
+#mainNavbar {
+    background-color: var(--siteBGColor);
+    border-radius: 0;
+    position: relative;
+}
+
+#mainNavbar .nav {
+    position: absolute; 
+    bottom: 0; 
+    right: 0;
+    margin-bottom: -20px;
 }
 
 .mainContent {
@@ -7,4 +29,5 @@ body {
 }
 
 .contentPanel {
+
 }
