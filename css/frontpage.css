@@ -18,7 +18,7 @@ body{
     position: relative;
     border-color: var(--siteContentColor);
     border-width: 0;  
-    font-size: 30px;
+    font-size: 25px;
 }
 
 #mainNavbar .nav {
@@ -37,17 +37,24 @@ hr {
     margin-bottom: 0px;
 }
 
-ul.nav.navbar-nav.navbar-right {
-    padding-top: 0px;
-    padding-bottom: 0px;
+ul li:not(:last-child) {
+    border-right:1px solid var(--siteContentColor);
+    border-width: 3px;
+    margin-right:20px;
+    padding-right:20px;
 }
 
 ul.nav li a, ul.nav li a:visited {
-    color: var(--textColor);
+    color: var(--textHeader2Color);
 }
 
 ul.nav a:hover { 
-    color: #fff !important; }
+    color: var(--textColor) !important; 
+}
+
+ul.nav a:focus { 
+    color: #fff !important; 
+}
 
 .mainContent {
 
