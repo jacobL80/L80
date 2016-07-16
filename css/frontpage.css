@@ -3,6 +3,11 @@ body{
     background-color: var(--siteBGColor);
 }
 
+#latestUpdatesList {
+    padding-left: 0;
+    list-style-type: none;
+}
+
 .navbar-brand {
     line-height: 100px;
     height: 100px;
