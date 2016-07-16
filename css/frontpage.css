@@ -74,4 +74,5 @@ ul.nav a:focus {
     background-clip: content-box;
     border-color: var(--siteContentColor);
     min-height: 500px;
+    border-radius: 0px;
 }
