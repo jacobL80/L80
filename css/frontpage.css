@@ -1,6 +1,7 @@
 body{
     font-family: 'Montserrat', sans-serif;
     background-color: var(--siteBGColor);
+    color: var(--textColor);
 }
 
 #latestUpdatesList {
@@ -62,6 +63,10 @@ ul.nav a:hover {
 
 ul.nav a:focus { 
     color: #fff !important; 
+}
+
+#latestUpdatesList li a, #latestUpdatesList li a:visited {
+    color: var(--textColor);
 }
 
 .mainContent {
