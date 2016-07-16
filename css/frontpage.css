@@ -37,6 +37,7 @@ hr {
     height: 4px;    
     margin-top: 0px;
     margin-bottom: 3%;
+    width: 98%; 
 }
 
 ul li:not(:last-child) {
@@ -59,7 +60,7 @@ ul.nav a:focus {
 }
 
 .mainContent {
-    width: 98%; 
+    width: 90%; 
 }
 
 .contentSection .header {
