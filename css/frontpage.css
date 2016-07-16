@@ -74,6 +74,7 @@ ul.nav a:focus {
 }
 
 .contentSection .header {
+    margin-bottom: -.35em;
     font-size: 3em;
     font-weight: bolder;
     color: var(--textColor);
