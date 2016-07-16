@@ -1,6 +1,8 @@
 body{
     font-family: 'Montserrat', sans-serif;
-    font-size: 21px;
+    color: var(--textColor);
+    font-size: 40px;
+    font-weight: bolder;
     background-color: var(--siteBGColor);
 }
 
@@ -13,16 +15,39 @@ body{
 
 #mainNavbar {
     background-color: var(--siteBGColor);
-    border-radius: 0;
     position: relative;
+    border-color: var(--siteContentColor);
+    border-width: 0;  
+    font-size: 30px;
 }
 
 #mainNavbar .nav {
     position: absolute; 
     bottom: 0; 
     right: 0;
-    margin-bottom: -20px;
+    margin-bottom: -30px;
+    margin-right: 20px;
 }
+
+hr {
+    border-color: var(--siteContentColor);
+    background-color: var(--siteContentColor);
+    height: 4px;    
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+ul.nav.navbar-nav.navbar-right {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+ul.nav li a, ul.nav li a:visited {
+    color: var(--textColor);
+}
+
+ul.nav a:hover { 
+    color: #fff !important; }
 
 .mainContent {
 
