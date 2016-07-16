@@ -1,7 +1,7 @@
 body{
     font-family: 'Montserrat', sans-serif;
     color: var(--textColor);
-    font-size: 40px;
+    font-size: 3em;
     font-weight: bolder;
     background-color: var(--siteBGColor);
 }
@@ -23,14 +23,14 @@ body{
     position: relative;
     border-color: var(--siteContentColor);
     border-width: 0;  
-    font-size: 25px;
+    font-size: 1em;
 }
 
 #mainNavbar .nav {
     position: absolute; 
     bottom: 0; 
     right: 0;
-    margin-right: 20px;
+    margin-right: 0.5%;
 }
 
 hr {
@@ -38,7 +38,7 @@ hr {
     background-color: var(--siteContentColor);
     height: 4px;    
     margin-top: 0px;
-    margin-bottom: 0px;
+    margin-bottom: 3%;
 }
 
 ul li:not(:last-child) {
