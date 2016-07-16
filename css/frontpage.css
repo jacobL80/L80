@@ -58,11 +58,6 @@ ul.nav a:focus {
     color: #fff !important; 
 }
 
-.mainContent {
-    width: 98%; 
-}
-
-
 .contentSection .header {
     font-size: 3em;
     font-weight: bolder;
@@ -71,5 +66,6 @@ ul.nav a:focus {
 
 .contentPanel {
     background-color: var(--siteContentColor);
+    background-clip: content-box;
     min-height: 500px;
 }
