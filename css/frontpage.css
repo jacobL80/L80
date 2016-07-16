@@ -72,5 +72,6 @@ ul.nav a:focus {
 .contentPanel {
     background-color: var(--siteContentColor);
     background-clip: content-box;
+    border-color: var(--siteContentColor);
     min-height: 500px;
 }
