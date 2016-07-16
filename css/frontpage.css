@@ -23,7 +23,7 @@ body{
     position: relative;
     border-color: var(--siteContentColor);
     border-width: 0;  
-    font-size: 1em;
+    font-size: 0.65em;
 }
 
 #mainNavbar .nav {
