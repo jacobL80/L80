@@ -6,11 +6,16 @@ body{
     background-color: var(--siteBGColor);
 }
 
-.navbar-brand,
-.navbar-nav li a {
+.navbar-brand {
     line-height: 100px;
     height: 100px;
     padding-top: 0;
+}
+
+
+.navbar-nav li a {
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 #mainNavbar {
@@ -25,7 +30,6 @@ body{
     position: absolute; 
     bottom: 0; 
     right: 0;
-    margin-bottom: -30px;
     margin-right: 20px;
 }
 
