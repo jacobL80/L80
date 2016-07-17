@@ -10,8 +10,8 @@ body{
 }
 
 .navbar-brand {
-    line-height: 100px;
-    height: 100px;
+    line-height: 80px;
+    height: 80px;
     padding-top: 0;
 }
 
@@ -85,6 +85,5 @@ ul.nav a:focus {
     background-color: var(--siteContentColor);
     background-clip: content-box;
     border-color: var(--siteContentColor);
-    min-height: 500px;
     border-radius: 0px;
 }

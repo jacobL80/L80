@@ -1,16 +1,32 @@
-var windowReference = $(window)
+var windowRef
+var mainContentRef
+var latestSectionHeaderRef
+var latestContentPanelRef
+var featuredContentPanelRef
 
-function rescaleMainContent() {
-    var mainContent = $("#mainContent")
-    var yStartPosition = mainContent.position().top
-    var yEndPosition = windowReference.height()
-    var newHeight = yEndPosition - yStartPosition;
+function scalePageContent() {
+    var mainContentStartY = mainContentRef.position().top
+    var windowHeight = windowRef.height()
+    mainContentRef.height(windowHeight - mainContentStartY)
 
-    console.log("resized")
+    var sectionHeaderHeight = latestSectionHeaderRef.height() + parseFloat(latestSectionHeaderRef.css("marginBottom"))
+    var sectionPanelMargin = parseFloat(latestContentPanelRef.css("marginBottom"))
+    console.log(sectionPanelMargin)
+    var panelContentLength = mainContentRef.height() - sectionHeaderHeight - sectionPanelMargin
 
-    mainContent.height(newHeight)
+    latestContentPanelRef.height(panelContentLength) 
+    featuredContentPanelRef.height(panelContentLength)
 }
 
-windowReference.resize(function() {
-    rescaleMainContent()
-});
+$(document).ready(function () {
+    windowRef = $(window)
+    mainContentRef = $("#mainContent")
+    latestSectionHeaderRef = $("#latestSectionHeader")
+    latestContentPanelRef = $("#latestSectionPanel")
+    featuredContentPanelRef = $("#featuredSectionPanel")
+    scalePageContent()
+
+    windowRef.resize(function () {
+        scalePageContent()
+    });
+})

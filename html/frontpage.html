@@ -21,7 +21,10 @@
     <nav class="navbar navbar-default navbar-static-top" id="mainNavbar" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="./frontpage.html"> Jacob Leighty | L80 </a>
+                <a class="navbar-brand" href="./frontpage.html"> 
+                    <img src="../assets/logo.png" class="img-responsive" href="./frontpage.html" width="500">
+                </a>
+                
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarControls" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
@@ -45,15 +48,14 @@
     </nav>
     <hr>
     <div class="container-fluid" id="mainContent">
-
-        <div class="row">
+        <div class="row" id="contentRow">
             <div class="col-md-3 contentSection" id="latestSection">
                 <div class="row">
-                    <div class="col-md-12 header">LATEST</div>
+                    <div class="col-md-12 header" id="latestSectionHeader">LATEST</div>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="panel contentPanel">
+                        <div class="panel contentPanel" id="latestSectionPanel">
                             <div class="panel-body">
                                 <ul id="latestUpdatesList">
                                     <li><a href="#">6/09/16: Portfolio Vector 1000</a></li>
@@ -69,20 +71,12 @@
             </div>
             <div class="col-md-9 contentSection" id="featuredSection">
                 <div class="row">
-                    <div class="col-md-12 header">FEATURED</div>
+                    <div class="col-md-12 header" id="featuredSectionHeader">FEATURED</div>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="panel contentPanel">
-                            <div class="panel-body text-center">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                    </div>
-                                    <div class="col-md-4">
-                                    </div>
-                                    <div class="col-md-4">
-                                    </div>
-                                </div>
+                        <div class="panel contentPanel" id="featuredSectionPanel">
+                            <div class="panel-body">
                             </div>
                         </div>
                     </div>
