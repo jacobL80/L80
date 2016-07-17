@@ -7,11 +7,10 @@ var featuredContentPanelRef
 function scalePageContent() {
     var mainContentStartY = mainContentRef.position().top
     var windowHeight = windowRef.height()
-    mainContentRef.height(windowHeight - mainContentStartY)
 
     var sectionHeaderHeight = latestSectionHeaderRef.height() + parseFloat(latestSectionHeaderRef.css("marginBottom"))
     var sectionPanelMargin = parseFloat(latestContentPanelRef.css("marginBottom"))
-    var panelContentLength = mainContentRef.height() - sectionHeaderHeight - sectionPanelMargin
+    var panelContentLength = windowHeight - mainContentStartY - sectionHeaderHeight - sectionPanelMargin
     latestContentPanelRef.height(panelContentLength) 
     featuredContentPanelRef.height(panelContentLength)
 }
