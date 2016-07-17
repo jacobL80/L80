@@ -24,7 +24,5 @@ $(document).ready(function () {
     featuredContentPanelRef = $("#featuredSectionPanel")
     scalePageContent()
 
-    windowRef.resize(function () {
-        scalePageContent()
-    });
+    windowRef.resize(scalePageContent);
 })
