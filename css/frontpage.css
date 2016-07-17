@@ -69,7 +69,7 @@ ul.nav a:focus {
     color: var(--textColor);
 }
 
-.mainContent {
+#mainContent {
     width: 90%; 
 }
 
