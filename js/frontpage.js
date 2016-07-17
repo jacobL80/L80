@@ -11,9 +11,7 @@ function scalePageContent() {
 
     var sectionHeaderHeight = latestSectionHeaderRef.height() + parseFloat(latestSectionHeaderRef.css("marginBottom"))
     var sectionPanelMargin = parseFloat(latestContentPanelRef.css("marginBottom"))
-    console.log(sectionPanelMargin)
     var panelContentLength = mainContentRef.height() - sectionHeaderHeight - sectionPanelMargin
-
     latestContentPanelRef.height(panelContentLength) 
     featuredContentPanelRef.height(panelContentLength)
 }
