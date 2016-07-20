@@ -10,31 +10,26 @@ body{
 }
 
 .navbar-brand {
-    line-height: 80px;
     height: 80px;
     padding-top: 0;
 }
 
-
-.navbar-nav li a {
-    padding-top: 0;
-    padding-bottom: 0;
-}
-
 #mainNavbar {
     background-color: var(--siteBGColor);
-    position: relative;
     border-color: var(--siteContentColor);
     border-width: 0;  
     font-size: 1.2em;
     font-weight: bolder;
 }
 
-#mainNavbar .nav {
-    position: absolute; 
+#navbarLinks {
     bottom: 0; 
     right: 0;
     margin-right: 0.5%;
+}
+
+#navbarLinks a {
+    padding-bottom: 0;
 }
 
 hr {

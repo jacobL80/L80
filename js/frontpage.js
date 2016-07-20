@@ -4,6 +4,10 @@ var latestSectionHeaderRef
 var latestContentPanelRef
 var featuredContentPanelRef
 
+function scaleLogo() {
+    
+}
+
 function scalePageContent() {
     var mainContentStartY = mainContentRef.position().top
     var windowHeight = windowRef.height()
@@ -22,6 +26,6 @@ $(document).ready(function () {
     latestContentPanelRef = $("#latestSectionPanel")
     featuredContentPanelRef = $("#featuredSectionPanel")
     scalePageContent()
-
-    windowRef.resize(scalePageContent);
 })
+
+window.onresize = scalePageContent
