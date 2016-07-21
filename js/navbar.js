@@ -1,20 +1,19 @@
 const maxLogoWidth = 500
-const navbarSpacing = 15 //in px
+const navbarSpacing = 50 //in px
 
-var navbarLinksRef
-var navbarLogoRef
-
-$(document).ready(function() {
-    navbarLinksRef = $("#navbarLinks")
-    navbarLogoRef = $("#navbarLogo")
-})
+function initializeNavbar() {
+    $.q("#navbarLinks").load(scaleNavbarLogo)
+}
 
 function scaleNavbarLogo() {
-    var navbarLinksStartY = navbarLinksRef.position().left
+    var navbarLinks = $.q("#navbarLinks")
+    var navbarLogo = $.q("#navbarLogo")
+
+    var navbarLinksStartY = navbarLinks.position().left
     var newNavbarLogoWidth = navbarLinksStartY - navbarSpacing
     if (newNavbarLogoWidth <= maxLogoWidth) {
-        navbarLogoRef.width(newNavbarLogoWidth)
-    } else if (navbarLogoRef.width() != maxLogoWidth) {
-        navbarLogoRef.width(maxLogoWidth)
+        navbarLogo.width(newNavbarLogoWidth)
+    } else if (navbarLogo.width() != maxLogoWidth) {
+        navbarLogo.width(maxLogoWidth)
     }
 }

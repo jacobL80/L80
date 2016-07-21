@@ -1,8 +1,35 @@
-var windowRef
-var mainContentRef
-var latestSectionHeaderRef
-var latestContentPanelRef
-var featuredContentPanelRef
+function scalePageContent() {
+    scaleNavbarLogo()
+    scaleContentHeight()
+}
+
+function scaleContentHeight() {
+    var windowRef = $(window)
+    var mainContent = $.q("#mainContent")
+    var latestSectionHeader = $.q("#latestSectionHeader")
+    var latestSectionPanel = $.q("#latestSectionPanel")
+    var featuredSectionPanel = $.q("#featuredSectionPanel")
+
+    var mainContentStartY = mainContent.position().top
+    var windowHeight = windowRef.height()
+
+    var sectionHeaderHeight = latestSectionHeader.height() + parseFloat(latestSectionHeader.css("marginBottom"))
+    var sectionPanelMargin = parseFloat(latestSectionPanel.css("marginBottom"))
+    var panelContentLength = windowHeight - mainContentStartY - sectionHeaderHeight - sectionPanelMargin
+    latestSectionPanel.height(panelContentLength)
+    featuredSectionPanel.height(panelContentLength)
+}
+
+$(document).ready(function () {
+    initializeNavbar()
+    initializeSlick()
+    window.onresize = scalePageContent
+
+    scalePageContent()
+})
+
+function initializeFrontpagePanels() {
+}
 
 function initializeSlick() {
     $('.slickFeature').slick({
@@ -22,32 +49,3 @@ function initializeSlick() {
         focusOnSelect: true
     });
 }
-
-function scalePageContent() {
-    scaleContentHeight()
-    scaleNavbarLogo()
-}
-
-function scaleContentHeight() {
-    var mainContentStartY = mainContentRef.position().top
-    var windowHeight = windowRef.height()
-
-    var sectionHeaderHeight = latestSectionHeaderRef.height() + parseFloat(latestSectionHeaderRef.css("marginBottom"))
-    var sectionPanelMargin = parseFloat(latestContentPanelRef.css("marginBottom"))
-    var panelContentLength = windowHeight - mainContentStartY - sectionHeaderHeight - sectionPanelMargin
-    latestContentPanelRef.height(panelContentLength)
-    featuredContentPanelRef.height(panelContentLength)
-}
-
-$(document).ready(function () {
-    windowRef = $(window)
-    mainContentRef = $("#mainContent")
-    latestSectionHeaderRef = $("#latestSectionHeader")
-    latestContentPanelRef = $("#latestSectionPanel")
-    featuredContentPanelRef = $("#featuredSectionPanel")
-    scalePageContent()
-
-    initializeSlick()
-})
-
-window.onresize = scalePageContent

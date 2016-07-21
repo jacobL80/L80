@@ -10,9 +10,15 @@ body{
 }
 
 .navbar-brand {
-    height: 80px;
+    height: auto;
     padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 0;
     padding-left: 6%;
+}
+
+#navbarLogo {
+    width: 0px;
 }
 
 #mainNavbar {
@@ -24,10 +30,11 @@ body{
 }
 
 #navbarLinks {
+    position: absolute;
     bottom: 0; 
     right: 0;
     margin-right: 0.5%;
-    padding-top: 2.5%;
+    padding-bottom: 5px;
 }
 
 #navbarLinks a {
