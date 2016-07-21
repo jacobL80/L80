@@ -5,7 +5,25 @@ var latestContentPanelRef
 var featuredContentPanelRef
 
 function scaleLogo() {
-    
+
+}
+
+function initializeSlick() {
+    $('.selectedFeature').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: '.selectedFeatureNav'
+    });
+    $('.selectedFeatureNav').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        asNavFor: '.selectedFeature',
+        dots: true,
+        centerMode: true,
+        focusOnSelect: true
+    });
 }
 
 function scalePageContent() {
@@ -15,7 +33,7 @@ function scalePageContent() {
     var sectionHeaderHeight = latestSectionHeaderRef.height() + parseFloat(latestSectionHeaderRef.css("marginBottom"))
     var sectionPanelMargin = parseFloat(latestContentPanelRef.css("marginBottom"))
     var panelContentLength = windowHeight - mainContentStartY - sectionHeaderHeight - sectionPanelMargin
-    latestContentPanelRef.height(panelContentLength) 
+    latestContentPanelRef.height(panelContentLength)
     featuredContentPanelRef.height(panelContentLength)
 }
 
@@ -26,6 +44,8 @@ $(document).ready(function () {
     latestContentPanelRef = $("#latestSectionPanel")
     featuredContentPanelRef = $("#featuredSectionPanel")
     scalePageContent()
+
+    initializeSlick()
 })
 
 window.onresize = scalePageContent
