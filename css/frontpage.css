@@ -85,3 +85,16 @@ ul.nav a:focus {
     border-color: var(--siteContentColor);
     border-radius: 0px;
 }
+
+.selectedFeature {
+    font-size: 2em;
+    font-weight: bolder;
+}
+
+.selectedBanner {
+    align-content: center;
+}
+
+.selectedInfo {
+    font-size: 1em;
+}
