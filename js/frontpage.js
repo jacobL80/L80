@@ -4,10 +4,6 @@ var latestSectionHeaderRef
 var latestContentPanelRef
 var featuredContentPanelRef
 
-function scaleLogo() {
-
-}
-
 function initializeSlick() {
     $('.slickFeature').slick({
         slidesToShow: 1,
@@ -28,6 +24,11 @@ function initializeSlick() {
 }
 
 function scalePageContent() {
+    scaleContentHeight()
+    scaleNavbarLogo()
+}
+
+function scaleContentHeight() {
     var mainContentStartY = mainContentRef.position().top
     var windowHeight = windowRef.height()
 
