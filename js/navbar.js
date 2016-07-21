@@ -1,5 +1,5 @@
 const maxLogoWidth = 500
-const navbarSpacing = 50 //in px
+const navbarSpacing = 20 //in px
 
 function initializeNavbar() {
     $.q("#navbarLinks").load(scaleNavbarLogo)

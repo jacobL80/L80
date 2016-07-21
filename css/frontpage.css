@@ -25,6 +25,10 @@ body{
     background-color: var(--siteBGColor);
     border-color: var(--siteContentColor);
     border-width: 0;  
+}
+
+#navbarControls {
+    min-height: 1.5em;
     font-size: 1.2em;
     font-weight: bolder;
 }
