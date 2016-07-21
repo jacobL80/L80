@@ -86,15 +86,15 @@ ul.nav a:focus {
     border-radius: 0px;
 }
 
-.selectedFeature {
+.featureTitle {
     font-size: 2em;
     font-weight: bolder;
 }
 
-.selectedBanner {
+.featureBanner {
     align-content: center;
 }
 
-.selectedInfo {
+.featureInfo {
     font-size: 1em;
 }

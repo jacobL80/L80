@@ -9,17 +9,18 @@ function scaleLogo() {
 }
 
 function initializeSlick() {
-    $('.selectedFeature').slick({
+    $('.slickFeature').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
+        swipe: false,
+        touchMove: false,
         arrows: false,
         fade: true,
-        asNavFor: '.selectedFeatureNav'
     });
-    $('.selectedFeatureNav').slick({
+    $('.slickFeatureNav').slick({
         slidesToShow: 3,
         slidesToScroll: 1,
-        asNavFor: '.selectedFeature',
+        asNavFor: '.slickFeature',
         dots: true,
         centerMode: true,
         focusOnSelect: true
