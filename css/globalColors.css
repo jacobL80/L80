@@ -1,8 +1,9 @@
 :root {
-    --siteBGColor: #271B18;
-    --siteContentColor: #614539;
-    --textColor: #C4BEBB;
-    --textHeader1Color: #46948A;
-    --textHeader2Color: #DE5526;
+    --siteBGColor: #04213E;
+    --siteContentColor: #062F51;
+	--siteContentColor2: #008FA1;
+    --textColor: #9F9677;
+    --navbarLinksColor: #E15427;
+    --textHeader1Color: #C7A96F;
     
 }

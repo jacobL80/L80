@@ -13,23 +13,23 @@ body{
     height: auto;
     padding-top: 0;
     padding-bottom: 0;
-    padding-right: 0;
-    padding-left: 6%;
+    padding-right: 30%;
+    padding-left: 4%;
 }
 
 #navbarLogo {
     width: 0px;
+	
 }
 
 #mainNavbar {
     background-color: var(--siteBGColor);
-    border-color: var(--siteContentColor);
     border-width: 0;  
 }
 
 #navbarControls {
     min-height: 1.5em;
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: bolder;
 }
 
@@ -44,19 +44,20 @@ body{
 #navbarLinks a {
     padding-bottom: 0;
     padding-top: 0;
+	color: var(--navbarLinksColor);
 }
 
 hr {
-    border-color: var(--siteContentColor);
-    background-color: var(--siteContentColor);
+    border-color: var(--siteContentColor2);
+    background-color: var(--siteContentColor2);
     height: 4px;    
     margin-top: 0px;
     margin-bottom: 3%;
-    width: 98%; 
+    width: 99%; 
 }
 
-ul li:not(:last-child) {
-    border-right:1px solid var(--siteContentColor);
+ul.nav li:not(:last-child) {
+    border-right:1px solid var(--siteContentColor2);
     border-width: 3px;
     margin-right:20px;
     padding-right:20px;
@@ -79,7 +80,7 @@ ul.nav a:focus {
 }
 
 #mainContent {
-    width: 90%; 
+    width: 99%; 
 }
 
 .contentSection .header {
@@ -93,7 +94,7 @@ ul.nav a:focus {
 .contentPanel {
     background-color: var(--siteContentColor);
     background-clip: content-box;
-    border-color: var(--siteContentColor);
+    border-color: var(--siteBGColor);
     border-radius: 0px;
 }
 
