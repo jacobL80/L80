@@ -1,4 +1,4 @@
-html, body {
+#9F9677;#9F9677;#9F9677;#9F9677;#9F9677;#9F9677;#9F9677;#9F9677;html, body {
 	height: 100%;
 }
 
@@ -9,10 +9,10 @@ body{
 	overflow-y: hidden;
 }
 
-#latestUpdatesList {
-    padding-left: 0;
-    list-style-type: none;
-}
+
+
+
+/* Header styles */
 
 .navbar-brand {
     height: auto;
@@ -61,90 +61,20 @@ hr {
     width: 99%; 
 }
 
-ul.nav li:not(:last-child) {
-    border-right:1px solid var(--siteContentColor2);
-    border-width: 3px;
-    margin-right:20px;
-    padding-right:20px;
-}
 
-ul.nav li a, ul.nav li a:visited {
-    color: var(--textHeader2Color);
-}
 
-ul.nav a:hover { 
-    color: var(--textColor) !important; 
-}
 
-ul.nav a:focus { 
-    color: #fff !important; 
-}
-
-#latestUpdatesList li a, #latestUpdatesList li a:visited {
-    color: var(--textColor);
-}
+/* Main content styles */
 
 #mainContent {
     width: 99%;
 	min-height: 100%;
 }
 
-#contentRow {
-	overflow:auto;
-	padding-bottom:150px;
-}
 
-.headerHex {
-	width: 100px;
-	margin-right: -.1em;
-}
 
-.contentSection .header {
-    margin-left: -.077em;
-    margin-bottom: -.34em;
-    font-size: 2.5em;
-    font-weight: bolder;
-    color: var(--textColor);
-}
 
-.contentPanel {
-    background-color: var(--siteContentColor);
-    background-clip: content-box;
-    border-color: var(--siteBGColor);
-    border-radius: 0px;
-	height: 30em!important;
-}
-
-.featureTitle {
-    font-size: 2em;
-    font-weight: bolder;
-	margin-top: inherit;
-}
-
-.featureBanner {
-    align-content: center;
-	max-width: 30em;
-	max-height: 18em;
-	height: 100%;
-	width: 100%;
-	display: block;
-}
-
-.featuredSectionPanel {
-	margin-top: 5em;
-}
-
-.featureInfo {
-    font-size: 1em;
-}
-
-.featureInfoRow {
-	margin-top: 1.5em;
-}
-
-.slickFeatureNav {
-	margin-top: 5em;	
-}
+/* Footer styles */
 
 .footer {
 	font-size: 0.6em;
@@ -155,3 +85,5 @@ ul.nav a:focus {
     clear:both;
     padding-top:20px;
 }
+
+/* Responsive design styles */
