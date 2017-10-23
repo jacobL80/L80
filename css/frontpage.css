@@ -1,11 +1,11 @@
-#9F9677;#9F9677;#9F9677;#9F9677;#9F9677;#9F9677;#9F9677;#9F9677;html, body {
+html, body {
 	height: 100%;
 }
 
-body{
+body {
     font-family: 'Montserrat', sans-serif;
-    background-color: var(--siteBGColor);
-    color: var(--textColor);
+    background-color: #04213E;
+    color: #9F9677;
 	overflow-y: hidden;
 }
 
@@ -14,47 +14,74 @@ body{
 
 /* Header styles */
 
+h1 {
+	color: #EFE5D1;
+	font-weight: bolder;
+	margin: 0 auto;
+    /*
+	margin-top: -.1em;
+	margin-left: .1em;*/
+	font-size: 5em;
+    float: left;
+}
+
 .navbar-brand {
     height: auto;
-    padding-top: .5em;
-    margin-bottom: -2em;
-    padding-right: 40%;
-    padding-left: 4.5%;
+    /*padding-top: .5em;
+    margin-bottom: -2em;*/
 }
 
 #navbarLogo {
-    width: 0px;	
+    height: auto;
+    width: 16em;
+    padding-left: 1em;
+    float: left;
 }
 
 #mainNavbar {
-    background-color: var(--siteBGColor);
-    border-width: 0;  
-}
-
-#navbarControls {
-    height: 1em!important;
-    font-size: 1em;
-    font-weight: bolder;
+    background-color: #04213E;
+    border-width: 0; 
+    position: relative;
 }
 
 #navbarLinks {
-	font-weight: bolder;
-    position: absolute;
-    bottom: 0; 
-    right: 0;
-    margin-right: 0.5%;
-    padding-bottom: 5px;
+    font-size: 2em;
+    font-weight: bolder;
+    /*position: fixed;
+    margin-top: .8em;
+    right: 0;*/
+    margin-right: 0;
+	padding-left: 1em;
+    line-height: 80px;
 }
 
 #navbarLinks a {
-    padding-bottom: 0;
-    padding-top: 0;
-	color: var(--navbarLinksColor);
+	padding: .15em .8em .15em 1.2em;
+	color: #E15427;
+	background-image: url(../assets/diamond-01.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    position: relative;
 }
 
-hr {
-    border-color: var(--siteContentColor2);
-    background-color: var(--siteContentColor2);
+.navbarLinks2 {
+	background-image: url(../assets/diamond-02.png)!important;
+}
+
+.navbarLinks3 {
+	background-image: url(../assets/diamond-03.png)!important;
+}
+
+.navbarLinks4 {
+	background-image: url(../assets/diamond-04.png)!important;
+}
+
+.navbarHr {
+    border-color: #008FA1;
+    background-color: #008FA1;
     height: 4px;    
     margin-top: 0%;
     margin-bottom: 0.5%;
@@ -77,13 +104,17 @@ hr {
 /* Footer styles */
 
 .footer {
-	font-size: 0.6em;
-	text-align: center;
-	position: relative;
-    margin-top: -160px; /* negative value of footer height */
-    height: 150px;
-    clear:both;
-    padding-top:20px;
+	bottom: 0;
+	width: 100%;
+	position: fixed;
 }
 
+.footerImage {
+	height: 25px;
+    width: 100%;
+}
+
+
+
 /* Responsive design styles */
+
