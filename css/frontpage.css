@@ -5,8 +5,9 @@ html, body {
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #04213E;
-    color: #9F9677;
-	overflow-y: hidden;
+    color: #c7a96f;
+	overflow-y: auto;
+    height: auto;
 }
 
 
@@ -18,22 +19,21 @@ h1 {
 	color: #EFE5D1;
 	font-weight: bolder;
 	margin: 0 auto;
-    /*
-	margin-top: -.1em;
-	margin-left: .1em;*/
-	font-size: 5em;
+	font-size: 4em;
     float: left;
+}
+
+.navbar-header {
+    margin-left: 15px;
 }
 
 .navbar-brand {
     height: auto;
-    /*padding-top: .5em;
-    margin-bottom: -2em;*/
 }
 
 #navbarLogo {
     height: auto;
-    width: 16em;
+    width: 13em;
     padding-left: 1em;
     float: left;
 }
@@ -41,18 +41,15 @@ h1 {
 #mainNavbar {
     background-color: #04213E;
     border-width: 0; 
-    position: relative;
+    line-height: 64px;
 }
 
 #navbarLinks {
-    font-size: 2em;
+    font-size: 1.8em;
     font-weight: bolder;
-    /*position: fixed;
-    margin-top: .8em;
-    right: 0;*/
     margin-right: 0;
 	padding-left: 1em;
-    line-height: 80px;
+    
 }
 
 #navbarLinks a {
@@ -65,6 +62,7 @@ h1 {
     height: 100%;
     vertical-align: middle;
     position: relative;
+    transition: .5s ease;
 }
 
 .navbarLinks2 {
@@ -79,13 +77,18 @@ h1 {
 	background-image: url(../assets/diamond-04.png)!important;
 }
 
+#navbarLinks a:hover {
+    color: #FFF;
+    background-image: url(../assets/diamond-06.png)!important;
+}
+
 .navbarHr {
     border-color: #008FA1;
     background-color: #008FA1;
-    height: 4px;    
-    margin-top: 0%;
-    margin-bottom: 0.5%;
-    width: 99%; 
+    height: 3px;    
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 98%; 
 }
 
 
@@ -94,10 +97,125 @@ h1 {
 /* Main content styles */
 
 #mainContent {
-    width: 99%;
-	min-height: 100%;
+    width: 100%;
+    margin: auto;
+	height: calc(100vh - 105px);
+    top: 65px;
+    position: relative;
 }
 
+h2 {
+    text-align: center;
+    font-weight: bolder;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.row {
+    margin: 0;
+}
+
+.contentRow1 {
+    margin-bottom: 6em;
+}
+
+.contentRow1, .contentRow2 {
+    width: 100%;
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+ 
+.buttonContainer::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #E20074; 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+
+.buttonContainer::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+	background-color: #111;
+}
+
+.buttonContainer::-webkit-scrollbar {
+	width: 12px;
+	background-color: #111;
+}
+
+
+.buttonDiv {
+    cursor: pointer;
+    width: 15em;
+    min-width: 15em;
+    margin: 1em 2em 0em;
+    display: inline-block;
+    position: relative;
+}
+
+.sectionButton {
+    color: #c7a96f;
+    font-size: 1em;
+    background-color: #04213E;
+    padding: 0 .5em;
+    overflow-wrap: break-word;
+    white-space: normal;
+    border-radius: 0!important;
+    height: 3em;
+    width: 100%;
+    border: 0px; 
+    margin-top: 1em;
+}
+
+.sectionButton:hover, .sectionButton:active, .sectionButton:focus, .sectionButton:visited {
+    background-color: #04213E;
+    border-width: 0;
+    outline-width: 0;
+}
+
+.buttonImage {
+    width: 100%;
+    border-color: #008FA1;
+    border-width: 3px;
+    border-style: solid;
+    backface-visibility: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 15em;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.diamonds {
+    float: left;
+    position: absolute;
+    margin-top: -1.75em;
+    margin-left: 25%;
+}
 
 
 
@@ -110,7 +228,7 @@ h1 {
 }
 
 .footerImage {
-	height: 25px;
+	height: 20px;
     width: 100%;
 }
 
