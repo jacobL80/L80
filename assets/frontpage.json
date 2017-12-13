@@ -1,0 +1,63 @@
+{
+    "entries": [{
+        "entryId": 1,
+        "entryName": "NPPI Portal",
+        "overlay": "UX/UI and web programming for an internal T-Mobile team's web portal.",
+        "releaseDate": "July 2017",
+        "imgSource": "nppi"
+    }, {
+        "entryId": 2,
+        "entryName": "DPPI (Web App)",
+        "overlay": "UX/UI and web programming for a D3 data aggregate and graphing tool.",
+        "releaseDate": "November 2017",
+        "imgSource": "dppi"
+    }, {
+        "entryId": 3,
+        "entryName": "EIA/Quantum Portal",
+        "overlay": "UX/UI and web programming for an internal T-Mobile team's web portal.",
+        "releaseDate": "October 2017",
+        "imgSource": "eiaquantum"
+    }, {
+        "entryId": 4,
+        "entryName": "Hungry, Hungry Huskies",
+        "overlay": "UX/UI mockup for a food crowd-sourcing web tool.",
+        "releaseDate": "February 2017",
+        "imgSource": "hungryhuskies"
+    }, {
+        "entryId": 5,
+        "entryName": "SPSInteractive",
+        "overlay": "UX/UI for a Tableau data aggregate and graphing tool (capstone project).",
+        "releaseDate": "June 2016",
+        "imgSource": "spsinteractive"
+    }, {
+        "entryId": 6,
+        "entryName": "L80",
+        "overlay": "UX/UI and web programming for my personal portfolio site.",
+        "releaseDate": "December 2017",
+        "imgSource": "l80"
+    }, {
+        "entryId": 7,
+        "entryName": "Misc. Illustrations",
+        "overlay": "Graphic design for various illustrations.",
+        "releaseDate": "2016-2017",
+        "imgSource": "illustrations"
+    }, {
+        "entryId": 8,
+        "entryName": "LoL Infographic",
+        "overlay": "Graphic design and research for infographic about 'League of Legends'.",
+        "releaseDate": "June 2016",
+        "imgSource": "lol"
+    }, {
+        "entryId": 9,
+        "entryName": "Purple Caster Minions",
+        "overlay": "Graphic design for UW organization's social media and ads.",
+        "releaseDate": "November 2015",
+        "imgSource": "pcm"
+    }, {
+        "entryId": 10,
+        "entryName": "Northwest Juice Co.",
+        "overlay": "Graphic design for Vaping company's physical merchandise and production.",
+        "releaseDate": "May 2015",
+        "imgSource": "nwjuiceco"
+    }]
+}
