@@ -1,63 +1,73 @@
 {
     "entries": [{
         "entryId": 1,
-        "entryName": "NPPI Portal",
-        "overlay": "UX/UI and web programming for an internal T-Mobile team's web portal.",
-        "releaseDate": "July 2017",
-        "imgSource": "nppi"
-    }, {
+        "entryName": "(T-Mobile) Event Posters",
+        "overlay": "Graphic design for a variety of in-house T-Mobile events.",
+        "releaseDate": "December 2017",
+        "imgSource": "poster",
+        "entryType": "graphic"
+    },{
         "entryId": 2,
-        "entryName": "DPPI (Web App)",
+        "entryName": "(T-Mobile) DPPI Web App",
         "overlay": "UX/UI and web programming for a D3 data aggregate and graphing tool.",
         "releaseDate": "November 2017",
-        "imgSource": "dppi"
+        "imgSource": "dppi",
+        "entryType": "ux"
     }, {
         "entryId": 3,
-        "entryName": "EIA/Quantum Portal",
+        "entryName": "(T-Mobile) EIA/Quantum Portal",
         "overlay": "UX/UI and web programming for an internal T-Mobile team's web portal.",
         "releaseDate": "October 2017",
-        "imgSource": "eiaquantum"
+        "imgSource": "eiaquantum",
+        "entryType": "ux"
     }, {
         "entryId": 4,
+        "entryName": "(T-Mobile) NPPI Portal",
+        "overlay": "UX/UI and web programming for an internal T-Mobile team's web portal.",
+        "releaseDate": "July 2017",
+        "imgSource": "nppi",
+        "entryType": "ux"
+    }, {
+        "entryId": 5,
         "entryName": "Hungry, Hungry Huskies",
         "overlay": "UX/UI mockup for a food crowd-sourcing web tool.",
         "releaseDate": "February 2017",
-        "imgSource": "hungryhuskies"
+        "imgSource": "hungryhuskies",
+        "entryType": "ux"
     }, {
-        "entryId": 5,
+        "entryId": 6,
         "entryName": "SPSInteractive",
         "overlay": "UX/UI for a Tableau data aggregate and graphing tool (capstone project).",
         "releaseDate": "June 2016",
-        "imgSource": "spsinteractive"
+        "imgSource": "spsinteractive",
+        "entryType": "ux"
     }, {
-        "entryId": 6,
+        "entryId": 7,
         "entryName": "L80",
         "overlay": "UX/UI and web programming for my personal portfolio site.",
         "releaseDate": "December 2017",
-        "imgSource": "l80"
+        "imgSource": "l80",
+        "entryType": "ux"
     }, {
-        "entryId": 7,
+        "entryId": 8,
         "entryName": "Misc. Illustrations",
         "overlay": "Graphic design for various illustrations.",
         "releaseDate": "2016-2017",
-        "imgSource": "illustrations"
+        "imgSource": "illustrations",
+        "entryType": "graphic"
     }, {
-        "entryId": 8,
+        "entryId": 9,
         "entryName": "LoL Infographic",
         "overlay": "Graphic design and research for infographic about 'League of Legends'.",
         "releaseDate": "June 2016",
-        "imgSource": "lol"
+        "imgSource": "lol",
+        "entryType": "graphic"
     }, {
-        "entryId": 9,
+        "entryId": 10,
         "entryName": "Purple Caster Minions",
         "overlay": "Graphic design for UW organization's social media and ads.",
         "releaseDate": "November 2015",
-        "imgSource": "pcm"
-    }, {
-        "entryId": 10,
-        "entryName": "Northwest Juice Co.",
-        "overlay": "Graphic design for Vaping company's physical merchandise and production.",
-        "releaseDate": "May 2015",
-        "imgSource": "nwjuiceco"
+        "imgSource": "pcm",
+        "entryType": "graphic"
     }]
 }
