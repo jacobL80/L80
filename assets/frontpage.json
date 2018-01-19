@@ -69,5 +69,12 @@
         "releaseDate": "November 2015",
         "imgSource": "pcm",
         "entryType": "graphic"
+    }, {
+        "entryId": 11,
+        "entryName": "Northwest Juice Co.",
+        "overlay": "Graphic design for Vaping company's physical merchandise and production.",
+        "releaseDate": "May 2015",
+        "imgSource": "nwjuiceco",
+        "entryType": "graphic"
     }]
 }

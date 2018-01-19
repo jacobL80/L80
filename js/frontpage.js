@@ -1,4 +1,4 @@
-var baseURL = 'https://api.myjson.com/bins/1b16m5';
+var baseURL = 'https://api.myjson.com/bins/qk3w5';
 
 $(document).ready(function () {
     "use strict";
@@ -8,17 +8,62 @@ $(document).ready(function () {
 		$.getJSON(baseURL, function(data) {
 			$.each(data.entries, function(i, option) {
                 var entryId = option.entryId;
-                $("span[class='entry" + entryId + "']").text(option.entryName);
-                $("p.date.date" + entryId).text(option.releaseDate);
-                $("div[parentId='entry" + entryId + "'] .text").text(option.overlay);
-                $("img[parentId='entry" + entryId + "']").attr('src', '../assets/tiles/' + option.imgSource + '.png');
+                var diamonds;
                 if (option.entryType === "ux") {
-                    console.log($("img[class='diamonds" + entryId + "']"));
-                    $("img[parentId='" + entryId + "']").attr('src', '../assets/diamond-08.png');
+                    diamonds = "diamond-08.png";
+                } else {
+                    diamonds = "diamond-07.png";
+                }
+                if (entryId <= 10) {
+                    $('<div class="buttonDiv" id="' + entryId + '" type="' + option.entryType + '"><img src="../assets/tiles/' + option.imgSource + '.png" class="img-responsive buttonImage" parentId="' + entryId + '"/><div class="overlay" parentId="' + entryId + '"><div class="text">' + option.overlay + '</div></div><div class="diamondRow"><img src="../assets/' + diamonds + '" class="img-responsive diamonds"/></div><button id="' + entryId + 'Button" class="btn btn-large btn-primary sectionButton" name="Continue" type="button"><span class="' + entryId + '">' + option.entryName + '</span><p class="date date1">' + option.releaseDate + '</p><i class="icon-ok" style="font-size:30px; vertical-align: middle;"></i></button></div>').appendTo('.contentRowInner');
+                } else {
+                    $('<div class="buttonDiv hidden" id="' + entryId + '" type="' + option.entryType + '"><img src="../assets/tiles/' + option.imgSource + '.png" class="img-responsive buttonImage" parentId="' + entryId + '"/><div class="overlay" parentId="' + entryId + '"><div class="text">' + option.overlay + '</div></div><div class="diamondRow"><img src="../assets/' + diamonds + '" class="img-responsive diamonds"/></div><button id="' + entryId + 'Button" class="btn btn-large btn-primary sectionButton" name="Continue" type="button"><span class="' + entryId + '">' + option.entryName + '</span><p class="date date1">' + option.releaseDate + '</p><i class="icon-ok" style="font-size:30px; vertical-align: middle;"></i></button></div>').appendTo('.contentRowInner');
                 }
 			});
 		});
-	});
+	});   
+    
+    // Displays only the 10 newest entries
+    $(document).on("click", "h1", function(e) {
+        e.preventDefault();
+        $("h2").text("FEATURED ENTRIES");
+        $(".buttonDiv").removeClass("hidden");
+        $(".buttonDiv").each(function() {
+            var id = $(this).attr("id");
+            if (id > 10) {
+                $(this).addClass("hidden");
+            }
+        });
+    });
+    
+    //Shows all content for each menu item clicked, and nothing else
+    $(document).on("click", ".navbarLinks", function(e) {
+        e.preventDefault();  
+        var id = $(this).attr("id");
+        if (id === "ux" || id === "graphic") {
+            $(".navbarLinks").css("color", "#E15427");
+            $(".navbarLinks").css("opacity", "1");
+            $(".navbarLinks").css("pointer-events", "auto");
+            if (id ==="ux") {
+                $(".navbarLinks2").css("background-image", "url(../assets/diamond-02.png)");
+                $("h2").text("UX/UI DESIGN");
+                $(".buttonDiv").addClass("hidden");
+                $(".buttonDiv[type='ux']").removeClass("hidden");
+            } else {
+                $(".navbarLinks1").css("background-image", "url(../assets/diamond-01.png)");
+                $("h2").text("GRAPHIC DESIGN");
+                $(".buttonDiv").addClass("hidden");
+                $(".buttonDiv[type='graphic']").removeClass("hidden");
+            }
+            
+            $("a[id='" + id + "']").css("color", "#FFF");
+            $("a[id='" + id + "']").css("opacity", ".5");
+            $("a[id='" + id + "']").css("background-image", "url(../assets/diamond-06.png)");
+            $("a[id='" + id + "']").css("pointer-events", "none");
+        }
+        
+    });  
+    
     
     //Handles hover over featured entries on Front Page
     $(document).on("mouseover", ".buttonDiv", function(e) {
