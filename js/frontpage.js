@@ -1,4 +1,4 @@
-var baseURL = 'https://api.myjson.com/bins/qk3w5';
+var baseURL = 'https://api.myjson.com/bins/qwvuh';
 
 $(document).ready(function () {
     "use strict";
@@ -6,6 +6,7 @@ $(document).ready(function () {
     // Loads JSON file info into featured entries boxes on Front Page
     $(function() {
 		$.getJSON(baseURL, function(data) {
+            var entryCounter = 0;
 			$.each(data.entries, function(i, option) {
                 var entryId = option.entryId;
                 var diamonds;
@@ -14,11 +15,12 @@ $(document).ready(function () {
                 } else {
                     diamonds = "diamond-07.png";
                 }
-                if (entryId <= 10) {
+                if (entryCounter < 10) {
                     $('<div class="buttonDiv" id="' + entryId + '" type="' + option.entryType + '"><img src="../assets/tiles/' + option.imgSource + '.png" class="img-responsive buttonImage" parentId="' + entryId + '"/><div class="overlay" parentId="' + entryId + '"><div class="text">' + option.overlay + '</div></div><div class="diamondRow"><img src="../assets/' + diamonds + '" class="img-responsive diamonds"/></div><button id="' + entryId + 'Button" class="btn btn-large btn-primary sectionButton" name="Continue" type="button"><span class="' + entryId + '">' + option.entryName + '</span><p class="date date1">' + option.releaseDate + '</p><i class="icon-ok" style="font-size:30px; vertical-align: middle;"></i></button></div>').appendTo('.contentRowInner');
                 } else {
                     $('<div class="buttonDiv hidden" id="' + entryId + '" type="' + option.entryType + '"><img src="../assets/tiles/' + option.imgSource + '.png" class="img-responsive buttonImage" parentId="' + entryId + '"/><div class="overlay" parentId="' + entryId + '"><div class="text">' + option.overlay + '</div></div><div class="diamondRow"><img src="../assets/' + diamonds + '" class="img-responsive diamonds"/></div><button id="' + entryId + 'Button" class="btn btn-large btn-primary sectionButton" name="Continue" type="button"><span class="' + entryId + '">' + option.entryName + '</span><p class="date date1">' + option.releaseDate + '</p><i class="icon-ok" style="font-size:30px; vertical-align: middle;"></i></button></div>').appendTo('.contentRowInner');
                 }
+                entryCounter++;
 			});
 		});
 	});   
@@ -27,43 +29,48 @@ $(document).ready(function () {
     $(document).on("click", "h1", function(e) {
         e.preventDefault();
         $("h2").text("FEATURED ENTRIES");
+        $(".aboutContentOuter").addClass("hidden");
+        $(".contentRowOuter").removeClass("hidden");
         $(".buttonDiv").removeClass("hidden");
+        $(".navbarLinks").removeClass("selected");
+        
+        var entryCounter = 0;
         $(".buttonDiv").each(function() {
-            var id = $(this).attr("id");
-            if (id > 10) {
+            entryCounter++;
+            if (entryCounter > 10) {
                 $(this).addClass("hidden");
             }
         });
     });
     
-    //Shows all content for each menu item clicked, and nothing else
+    //Handles click events for each menu option. Some are new pages and some are toggles
     $(document).on("click", ".navbarLinks", function(e) {
-        e.preventDefault();  
+        e.preventDefault(); 
         var id = $(this).attr("id");
-        if (id === "ux" || id === "graphic") {
-            $(".navbarLinks").css("color", "#E15427");
-            $(".navbarLinks").css("opacity", "1");
-            $(".navbarLinks").css("pointer-events", "auto");
-            if (id ==="ux") {
-                $(".navbarLinks2").css("background-image", "url(../assets/diamond-02.png)");
-                $("h2").text("UX/UI DESIGN");
-                $(".buttonDiv").addClass("hidden");
-                $(".buttonDiv[type='ux']").removeClass("hidden");
-            } else {
-                $(".navbarLinks1").css("background-image", "url(../assets/diamond-01.png)");
-                $("h2").text("GRAPHIC DESIGN");
-                $(".buttonDiv").addClass("hidden");
-                $(".buttonDiv[type='graphic']").removeClass("hidden");
-            }
-            
-            $("a[id='" + id + "']").css("color", "#FFF");
-            $("a[id='" + id + "']").css("opacity", ".5");
-            $("a[id='" + id + "']").css("background-image", "url(../assets/diamond-06.png)");
-            $("a[id='" + id + "']").css("pointer-events", "none");
+        
+        if (id === "ux" || id === "graphic" || id === "about") {
+            $(".navbarLinks").removeClass("selected");
+            $("a[id='" + id + "']").addClass("selected"); 
+            $(".buttonDiv").addClass("hidden");
+            $(".contentRowOuter").removeClass("hidden");
+            $(".aboutContentOuter").addClass("hidden");
         }
         
-    });  
-    
+        if (id ==="ux") {
+            $("h2").text("UX/UI DESIGN");
+            $(".buttonDiv[type='ux']").removeClass("hidden");
+        } else if (id === "graphic") {
+            $("h2").text("GRAPHIC DESIGN");
+            $(".buttonDiv[type='graphic']").removeClass("hidden");
+        } else if (id === "about") {
+            $("h2").text("ABOUT");
+            $(".contentRowOuter").addClass("hidden");
+            $(".aboutContentOuter").removeClass("hidden");
+            $("#selfie").removeClass("hidden");
+        } else {
+            window.open('http://l80comics.com', '_blank');
+        }
+    });      
     
     //Handles hover over featured entries on Front Page
     $(document).on("mouseover", ".buttonDiv", function(e) {

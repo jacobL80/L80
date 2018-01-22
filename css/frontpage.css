@@ -95,7 +95,7 @@ h1 {
 }
 
 .navbarLinks4 {
-	background-image: url(../assets/diamond-04.png)!important;
+	background-image: url(../assets/diamond-04.png);
 }
 
 #navbarLinks a:hover {
@@ -107,6 +107,7 @@ h1 {
     color: #FFF!important;
     background-image: url(../assets/diamond-06.png)!important;
     pointer-events: none!important;
+    opacity: .5;
 }
 
 .navbarHr {
@@ -151,7 +152,7 @@ h2 {
     text-align: center;
 }
 
-.contentRowInner {
+.contentRowInner, .aboutContentInner {
     max-width: 1400px;
 }
  
@@ -253,6 +254,79 @@ h2 {
     width: 50%;
 }
 
+.diamonds2 {
+    width: 25%;
+}
+
+
+
+
+/* About page styles */
+.aboutContentOuter {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.aboutContentInner {
+    width: 100%;
+    max-width: 1400px;
+}
+
+.col-md-6 {
+    position: relative;
+}
+
+#selfie, .aboutText {
+    width: 30em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+}
+
+.aboutText {
+    color: #9f9677;
+    padding: 1em;
+}
+
+#name {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.buttonImage {
+    border-width: 5px;
+}
+
+/*
+.resumeBtn {
+    width: 10em;
+    height: 3em;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-radius: 0;
+    background-color: #E15427;
+    border-width: 0;
+    transition: .5s ease;
+}
+
+.btn-primary:hover, .btn-primary.active, .btn-primary:active, .open>.dropdown-toggle.btn-primary, .btn-primary.focus, .btn-primary:focus {
+    color: #008FA1;
+    background-color: #FFF;
+    border-width: 0;
+}*/
+
+embed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3em;
+}
+
+
 
 
 /* Footer styles */
@@ -270,6 +344,7 @@ h2 {
 
 
 
+
 /* Responsive design styles */
 @media (max-width: 800px) {
     
@@ -280,7 +355,6 @@ h2 {
     h1 {
         padding-left: 15px;
     }
-    
     
     .contentRow1 {
         margin-bottom: 0em;

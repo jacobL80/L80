@@ -30,10 +30,10 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right" id="navbarLinks">
                 <!--<li class="active"><a href="#">Link<span class="sr-only">(current)</span></a></li>-->
-                <li><a class="navbarLinks navbarLinks1" id="ux">UX/UI</a></li>
-                <li><a class="navbarLinks navbarLinks2" id="graphic">GRAPHIC DESIGN</a></li>
-                <li><a href="http://l80comics.com" target="_blank" class="navbarLinks navbarLinks3">PERSONAL SITE</a></li>
-                <li><a href="about.html" class="navbarLinks navbarLinks4">ABOUT</a></li>
+                <li><a class="navbarLinks navbarLinks1 navbarSorting" id="ux">UX/UI</a></li>
+                <li><a class="navbarLinks navbarLinks2 navbarSorting" id="graphic">GRAPHIC DESIGN</a></li>
+                <li><a class="navbarLinks navbarLinks3" id="comics">PERSONAL SITE</a></li>
+                <li><a href="about.html" class="navbarLinks navbarLinks4" id="about">ABOUT</a></li>
             </ul>
         </div>
     <hr class="navbarHr">
@@ -63,7 +63,50 @@
             </div>  
         </div>
         
+        <div class="row aboutContentOuter hidden">
+            <div class="row aboutContentInner">
+                <div class="col-md-6">
+
+                    <div class="buttonDiv" id="selfie">
+                        <img src="../assets/me.jpg" class="img-responsive buttonImage"/>
+                        <div class="diamondRow">
+                            <img src="../assets/diamond-07.png" class="img-responsive diamonds diamonds2"/>
+                        </div>
+                        <p align="center" id="name">Jacob Leighty</p>
+                    </div>
+
+                    <p class="aboutText">Jacob Leighty is a 
+                    <!-- I will not change this number more than once. Harumph. -->
+                    <script type ="text/javascript">
+                        var age = _calcAge();
+                        function _calcAge() {
+                            var date = new Date(1994,06,13,0,0,0);
+                            var today = new Date();
+
+                            var timeDiff = Math.abs(today.getTime() - date.getTime());
+                            var age = Math.ceil(timeDiff / (1000 * 3600 * 24)) / 365;
+                            return age;
+                        }
+                        document.write(Math.floor(age));
+                    </script> 
+                    year old UX/Graphic Designer from Auburn, Washington. <br><br>He attended the University of Washington, where he graduated with a Bachelor of Science in Informatics in 2016.<br><br>He can be reached via <a href="mailto:jacob.leighty@gmail.com?Subject=Via%20portfolio" target="_top">email.</a><br><br><br>
+                    <!--<button id="resumeButton" class="btn btn-large btn-primary resumeBtn showResume" name="Continue" type="button">
+                        <span>Show Resume</span>
+                    </button>-->
+                    </p>
+
+                </div>
+                <div class="col-md-6 resumeRow">
+                    <div class="resume">
+                        <embed src="../assets/Resume.pdf" width="90%" height="700" type="application/pdf">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
     </div>
+    
+
     
     <footer class="footer navbar-fixed-bottom">
 		<div>
