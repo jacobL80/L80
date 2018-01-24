@@ -1,4 +1,5 @@
-var baseURL = 'https://api.myjson.com/bins/qwvuh';
+//var baseURL = 'http://l80.io/assets/frontpage.json';
+var baseURL = 'https://api.myjson.com/bins/gugs1'; // For testing
 
 $(document).ready(function () {
     "use strict";
@@ -16,9 +17,9 @@ $(document).ready(function () {
                     diamonds = "diamond-07.png";
                 }
                 if (entryCounter < 10) {
-                    $('<div class="buttonDiv" id="' + entryId + '" type="' + option.entryType + '"><img src="../assets/tiles/' + option.imgSource + '.png" class="img-responsive buttonImage" parentId="' + entryId + '"/><div class="overlay" parentId="' + entryId + '"><div class="text">' + option.overlay + '</div></div><div class="diamondRow"><img src="../assets/' + diamonds + '" class="img-responsive diamonds"/></div><button id="' + entryId + 'Button" class="btn btn-large btn-primary sectionButton" name="Continue" type="button"><span class="' + entryId + '">' + option.entryName + '</span><p class="date date1">' + option.releaseDate + '</p><i class="icon-ok" style="font-size:30px; vertical-align: middle;"></i></button></div>').appendTo('.contentRowInner');
+                    $('<div class="buttonDiv" id="' + entryId + '" type="' + option.entryType + '"><img src="assets/tiles/' + option.imgSource + '.png" class="img-responsive buttonImage" parentId="' + entryId + '"/><div class="overlay" parentId="' + entryId + '"><div class="text">' + option.overlay + '</div></div><div class="diamondRow"><img src="assets/' + diamonds + '" class="img-responsive diamonds"/></div><button id="' + entryId + 'Button" class="btn btn-large btn-primary sectionButton" name="Continue" type="button"><span class="' + entryId + '">' + option.entryName + '</span><p class="date date1">' + option.releaseDate + '</p><i class="icon-ok" style="font-size:30px; vertical-align: middle;"></i></button></div><div id="modal' + entryId + '" class="modal"><div class="modal-content"><span class="close">&times;</span><p class="modalText">Modal ' + entryId + ': ' + option.entryName+ '</p></div></div>').appendTo('.contentRowInner');
                 } else {
-                    $('<div class="buttonDiv hidden" id="' + entryId + '" type="' + option.entryType + '"><img src="../assets/tiles/' + option.imgSource + '.png" class="img-responsive buttonImage" parentId="' + entryId + '"/><div class="overlay" parentId="' + entryId + '"><div class="text">' + option.overlay + '</div></div><div class="diamondRow"><img src="../assets/' + diamonds + '" class="img-responsive diamonds"/></div><button id="' + entryId + 'Button" class="btn btn-large btn-primary sectionButton" name="Continue" type="button"><span class="' + entryId + '">' + option.entryName + '</span><p class="date date1">' + option.releaseDate + '</p><i class="icon-ok" style="font-size:30px; vertical-align: middle;"></i></button></div>').appendTo('.contentRowInner');
+                    $('<div class="buttonDiv hidden" id="' + entryId + '" type="' + option.entryType + '"><img src="assets/tiles/' + option.imgSource + '.png" class="img-responsive buttonImage" parentId="' + entryId + '"/><div class="overlay" parentId="' + entryId + '"><div class="text">' + option.overlay + '</div></div><div class="diamondRow"><img src="assets/' + diamonds + '" class="img-responsive diamonds"/></div><button id="' + entryId + 'Button" class="btn btn-large btn-primary sectionButton" name="Continue" type="button"><span class="' + entryId + '">' + option.entryName + '</span><p class="date date1">' + option.releaseDate + '</p><i class="icon-ok" style="font-size:30px; vertical-align: middle;"></i></button></div><div id="modal' + entryId + '" class="modal"><div class="modal-content"><span class="close">&times;</span><p class="modalText">' + entryId + ' MODAL TEST!</p></div></div>').appendTo('.contentRowInner');
                 }
                 entryCounter++;
 			});
@@ -76,8 +77,8 @@ $(document).ready(function () {
     $(document).on("mouseover", ".buttonDiv", function(e) {
         e.preventDefault(); 
         var id = $(this).attr("id");
-        $("img[parentId='" + id + "']").css("background", "rgba(0,140,186,.6)");
-        $("div[parentId='" + id + "']").css("background", "rgba(0,140,186,.6)");
+        $("img[parentId='" + id + "']").css("background", "rgba(0,140,186,.7)");
+        $("div[parentId='" + id + "']").css("background", "rgba(0,140,186,.7)");
         $("div[parentId='" + id + "'] .text").css("color", "rgba(255,255,255,1)");
     });
     
@@ -102,5 +103,33 @@ $(document).ready(function () {
 		} else {
 			$this.text('Hide Resume');
 		}
-    });    
+    });   
+    
+
+    var id = 0;
+    // When the user clicks on the button, open the modal 
+    $(document).on("click", ".buttonDiv", function(e) {
+        e.preventDefault();
+        id = $(this).attr("id");
+        var modal = $("div[id='modal" + id + "']");
+        $(modal).addClass("visible");
+        $(".modalOverlay").addClass("visible");
+    });
+
+    // When the user clicks on <span> (x), close the modal
+    $(document).on("click", ".close", function(e) {
+        e.preventDefault();
+        $(".modal").removeClass("visible");
+        $(".modalOverlay").removeClass("visible");
+        id = 0;
+    });
+
+    // When the user clicks anywhere outside of the modal, close it
+    $(document).click(function(event) {
+        //if you click on anything except the modal itself or the "open modal" link, close the modal
+        if (!$(event.target).closest(".modal-content, .buttonDiv").length) {
+            $("body").find(".modal").removeClass("visible");
+            $(".modalOverlay").removeClass("visible");
+        }
+    });
 });

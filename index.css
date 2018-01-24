@@ -3,7 +3,7 @@ html, body {
 }
 
 body {
-    font-family: 'Avenir', sans-serif;
+    font-family: lato, sans-serif;
     background-color: #04213E;
     color: #c7a96f;
 	overflow-y: auto;
@@ -17,7 +17,7 @@ body {
 
 h1 {
 	color: #EFE5D1;
-	font-weight: bolder;
+	font-weight: 1000;
 	margin: 0 auto;
 	font-size: 4em;
     float: left;
@@ -28,16 +28,16 @@ h1 {
     color: #EFE5D1;
     margin-left: 15px;
     width: 260px;
-    background-image: url(../assets/diamonds-01.png);
+    background-image: url(assets/diamonds-01.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: right; 
-    transition: .5s ease;
+    transition: .2s ease;
 }
 
 .navbar-header h1:hover {
     color: #FFF;
-    background-image: url(../assets/diamonds-02.png);
+    background-image: url(assets/diamonds-02.png);
 }
 
 .navbar-brand {
@@ -49,8 +49,8 @@ h1 {
     width: 13em;
     padding-left: 1em;
     float: left;
-    transition: .5s ease;
-    background-image: url(../assets/diamonds-01.png);
+    transition: .2s ease;
+    background-image: url(assets/diamonds-01.png);
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -63,7 +63,7 @@ h1 {
 
 #navbarLinks {
     font-size: 1.8em;
-    font-weight: bolder;
+    font-weight: 1000;
     margin-right: 0;
 	padding-left: 1em;
     
@@ -79,33 +79,33 @@ h1 {
     vertical-align: middle;
     position: relative;
     cursor: pointer;
-    transition: .5s ease;
+    transition: .2s ease;
 }
 
 .navbarLinks1 {
-    background-image: url(../assets/diamond-01.png);
+    background-image: url(assets/diamond-01.png);
 }
 
 .navbarLinks2 {
-	background-image: url(../assets/diamond-02.png);
+	background-image: url(assets/diamond-02.png);
 }
 
 .navbarLinks3 {
-	background-image: url(../assets/diamond-03.png)!important;
+	background-image: url(assets/diamond-03.png)!important;
 }
 
 .navbarLinks4 {
-	background-image: url(../assets/diamond-04.png);
+	background-image: url(assets/diamond-04.png);
 }
 
 #navbarLinks a:hover {
     color: #FFF!important;
-    background-image: url(../assets/diamond-06.png)!important;
+    background-image: url(assets/diamond-06.png)!important;
 }
 
 .selected {
     color: #FFF!important;
-    background-image: url(../assets/diamond-06.png)!important;
+    background-image: url(assets/diamond-06.png)!important;
     pointer-events: none!important;
     opacity: .5;
 }
@@ -134,10 +134,10 @@ h1 {
 
 h2 {
     text-align: center;
-    font-weight: bolder;
+    font-weight: 1000;
     margin-top: 1em;
     margin-bottom: 1em;
-    transition: .5s ease;
+    transition: .2s ease;
 }
 
 .row {
@@ -156,28 +156,6 @@ h2 {
     max-width: 1400px;
 }
  
-.buttonContainer::-webkit-scrollbar-thumb {
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-    background: #E20074; 
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
-    box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
-}
-
-.buttonContainer::-webkit-scrollbar-track {
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    -webkit-border-radius: 10px;
-    border-radius: 10px;
-	background-color: #111;
-}
-
-.buttonContainer::-webkit-scrollbar {
-	width: 12px;
-	background-color: #111;
-}
-
-
 .buttonDiv {
     cursor: pointer;
     width: 15em;
@@ -185,13 +163,13 @@ h2 {
     margin: 1em 2em 5em;
     display: inline-block;
     position: relative;
-    transition: .5s ease;
+    transition: .2s ease;
 }
 
 .sectionButton {
     color: #c7a96f;
     font-size: 1em;
-    font-weight: 600;
+    font-weight: 1000;
     background-color: #04213E;
     padding: 0 .5em;
     overflow-wrap: break-word;
@@ -226,7 +204,7 @@ h2 {
   height: 15em;
   width: 100%;
   /*opacity: 0;*/
-  transition: .5s ease;
+  transition: .2s ease;
   background: rgba(0,140,186,0);
 }
 
@@ -236,7 +214,7 @@ h2 {
     position: absolute;
     top: 50%;
     left: 20%;
-    transition: .5s ease;
+    transition: .2s ease;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-12%, -50%); /* change back to 50% for this and left if things suck */
 }
@@ -256,6 +234,78 @@ h2 {
 
 .diamonds2 {
     width: 25%;
+}
+
+
+
+
+
+/* Modal styles */
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 10; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+}
+
+/* Overlay for the navbar to make overlay consistent */
+.modalOverlay {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    height: 68px;
+    width: 100%;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+}
+
+.visible {
+    display: block;
+  }
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #04213E;
+    padding: 20px;
+    border: 5px solid #008FA1;
+    border-radius: 0px;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 1200px;
+    height: 60%;
+    display: inline-flex;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 10px 10px 0 rgba(0,0,0,0.3), 0 10px 20px 0 rgba(0,0,0,0.28);
+}
+
+.modalText {
+    margin: 1em auto;
+    font-size: 1.2em;
+    font-weight: 1000;
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    position: fixed;
+    float: right;
+    right: 25px;
+    font-size: 28px;
+    font-weight: 1000;
+}
+
+.close:hover,
+.close:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 
@@ -310,7 +360,7 @@ h2 {
     border-radius: 0;
     background-color: #E15427;
     border-width: 0;
-    transition: .5s ease;
+    transition: .2s ease;
 }
 
 .btn-primary:hover, .btn-primary.active, .btn-primary:active, .open>.dropdown-toggle.btn-primary, .btn-primary.focus, .btn-primary:focus {
@@ -352,15 +402,20 @@ embed {
         line-height: 5px; 
     }
     
-    h1 {
-        padding-left: 15px;
+    .navbar-header h1 {
+        margin-left: 10%;
     }
     
-    .contentRow1 {
-        margin-bottom: 0em;
+    h2 {
+        margin-top: 15px;
+        margin-bottom: 10px;
     }
     
-    .contentRow2 {
+    .contentRowOuter {
         margin-bottom: 3em;
     }
+    
+    .buttonDiv {
+        margin-bottom: 1em;
+    }    
 }
