@@ -272,23 +272,63 @@ h2 {
 
 /* Modal Content/Box */
 .modal-content {
+    overflow: hidden;
     background-color: #04213E;
     padding: 20px;
     border: 5px solid #008FA1;
     border-radius: 0px;
     width: 80%; /* Could be more or less, depending on screen size */
     max-width: 1200px;
-    height: 60%;
-    display: inline-flex;
+    height: 70%;
     top: 50%;
     transform: translateY(-50%);
     box-shadow: 0 10px 10px 0 rgba(0,0,0,0.3), 0 10px 20px 0 rgba(0,0,0,0.28);
+    
 }
 
 .modalText {
-    margin: 1em auto;
+    margin: 0em auto 1em;
     font-size: 1.2em;
     font-weight: 1000;
+}
+
+.modalRow {
+    width: 100%;
+    overflow: hidden;
+}
+
+.modalBlock {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    scrollbar-face-color: #008FA1;
+    scrollbar-shadow-color: #000;
+    scrollbar-highlight-color: #000;
+    scrollbar-3dlight-color: #000;
+    scrollbar-darkshadow-color: #000;
+    scrollbar-track-color: #000;
+    scrollbar-arrow-color: #000;
+}
+
+.modalBlock::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #008FA1; 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+
+.modalBlock::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+	background-color: #111;
+}
+
+.modalBlock::-webkit-scrollbar {
+	width: 12px;
+	background-color: #111;
 }
 
 /* The Close Button */
