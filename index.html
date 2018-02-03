@@ -26,52 +26,178 @@
 
 <body>
     <nav class="navbar navbar-default navbar-fixed-top shadow" id="mainNavbar">
-        <div class="modalOverlay">                
-        </div>
         <a class="navbar-header" id="navbarHeader">
             <h1 parentId="navbarHeader">L80</h1>
         </a>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right" id="navbarLinks">
                 <!--<li class="active"><a href="#">Link<span class="sr-only">(current)</span></a></li>-->
-                <li><a class="navbarLinks navbarLinks1" id="ux">UX/UI</a></li>
-                <li><a class="navbarLinks navbarLinks2" id="graphic">GRAPHIC DESIGN</a></li>
-                <li><a class="navbarLinks navbarLinks3" id="comics">PERSONAL SITE</a></li>
-                <li><a class="navbarLinks navbarLinks4" id="about">ABOUT</a></li>
+                <li><a class="navbarLinks navbarLinks1" id="ux">Ux/Coding</a></li>
+                <li><a class="navbarLinks navbarLinks2" id="graphic">Graphic Design</a></li>
+                <li><a class="navbarLinks navbarLinks3" id="comics">Personal Site</a></li>
+                <li><a class="navbarLinks navbarLinks4" id="about">About</a></li>
             </ul>
         </div>
     <hr class="navbarHr">
     </nav>
 
     <div id="mainContent">
-        <h2>FEATURED ENTRIES</h2>  
+        <h2 id=" "></h2>  
         <div class="row contentRowOuter">
             <div class="row contentRowInner">
-                 <!--  EXAMPLE BOX
-                    <div class="buttonDiv" id="entry3">
-                        <img src="../assets/tiles/temp2.png" class="img-responsive buttonImage" parentId="entry3"/>
-                        <div class="overlay" parentId="entry3">
-                            <div class="text"></div>
-                        </div>
-                        <div class="diamondRow">
-                            <img src="../assets/diamond-07.png" class="img-responsive diamonds" parentId="3"/>
-                        </div>
-                        <button id="entry3Button" class="btn btn-large btn-primary sectionButton" name="Continue" type="button">
-
-                            <span class="entry3"></span>
-                            <p class="date date3"></p>
-                            <i class="icon-ok" style="font-size:30px; vertical-align: middle;"></i>
-                        </button>
-                    </div>
-                -->
+                 <!--  CONTENT GOES HERE  -->
             </div>  
         </div>
         
         <div class="row aboutContentOuter hidden">
             <div class="row aboutContentInner">
-                <div class="col-md-6">
+                <div class="container-fluid resume">
+                    <div class="row">
+                        <div class="col-sm-3">
+                        <img src="assets/Resume_assets-01.png" class="img-responsive resumeIcon">
+                        </div>
+                        <div class="col=sm-9">
+                            <h4>Jacob Leighty</h4>
+                            <hr class="resumeHr">
+                            <p class="resumeText text-left">My name is Jacob. I am a 
+                                <!-- I will not change this number more than once. Harumph. -->
+                                <script type ="text/javascript">
+                                    var age = _calcAge();
+                                    function _calcAge() {
+                                        var date = new Date(1994,06,13,0,0,0);
+                                        var today = new Date();
 
-                    <div class="buttonDiv" id="selfie">
+                                        var timeDiff = Math.abs(today.getTime() - date.getTime());
+                                        var age = Math.ceil(timeDiff / (1000 * 3600 * 24)) / 365;
+                                        return age;
+                                    }
+                                    document.write(Math.floor(age));
+                                </script> 
+                            year old designer from Auburn, Washington. In my free time, I enjoy listening to music (both at home and live), playing competitive video games, playing tennis and badminton, and going on long walks.</p><br>
+                        </div>
+                    </div>
+                    <hr class="resumeHr">
+
+                    <!-- Contact Me -->
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h5 class="text-center">Contact Information</h5>
+                            
+                            <div class="resumeContactInfo">
+                                <p class="resumeText text-center">Auburn, WA 98092  •  <a class="resumeLink" href="tel:2538806289" target="_top">(253) 880 - 6289</a> • <a class="resumeLink" href="mailto:jacob.leighty@gmail.com?Subject=Via%20portfolio" target="_top">jacob.leighty@gmail.com</a></p>
+                                <p class="resumeText text-center"><a class="resumeLink" href="http://L80.io" target="_top">Portfolio: L80.io</a>  •  <a class="resumeLink" href="linkedin.com/in/jacob-leighty" target="_top">LinkedIn Profile</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <hr class="resumeHr">
+                    
+                    <!-- Qualifications -->
+                    <div class="row">
+                        <div class="col-sm-8 text-left">
+                            <h4 class="resumeSubtitle">Qualifications</h4>
+                            <div class="resumeQualText">
+                                <div class="pBar"></div>
+                                <div class="diamond diamondVr"></div>
+                                <p class="resumeText">Creative and analytical designer with related experience and education to be a key contributing member in application and product development, ensuring timeliness and end user satisfaction. </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                        <img src="assets/Resume_assets-05.png" class="img-responsive resumeGraphic">
+                        </div>
+                    </div>
+                    <br>
+                    <hr class="resumeHr">
+
+                    <!-- Education -->
+                    <div class="row">
+                        <div class="col-sm-12 text-left">
+                            <h4 class="resumeSubtitle">Education</h4>
+                            <div class="resumeQualText">
+                                <div class="pBar pBar2"></div>
+                                <div class="diamond diamondVr"></div>
+                                <div style="padding-top:1em">
+                                    <p class="resumeJob resumeEducation"><strong>Bachelor of Science in Informatics, UX/UI Design track </strong></p>
+                                    <p class="resumeText">University of Washington, Seattle, WA  •  Dean’s List</p>
+                                </div>
+                            </div>
+                            <div class="resumeQualText">
+                                <div class="pBar pBar3"></div>
+                                <div class="diamond diamondVr"></div>
+                                <div style="padding-top:1em">
+                                    <p class="resumeJob resumeEducation"><strong>Coursework:</strong></p>
+                                    <p class="resumeText">Visual Information Design, Value Sensitive Design, Design Thinking, UX & Info Architecture, Info Systems Analysis/Design, Research Methods, Client-Side Web Dev, Android Dev</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <hr class="resumeHr">
+
+                    <!-- Experience -->
+                    <h4 class="resumeSubtitle text-left">Experience</h4>
+                    <div class="row">
+                        <div class="col-sm-3">
+                        <img src="assets/Resume_assets-02.png" class="img-responsive resumeExp">
+                        </div>
+                        <div class="col-sm-9 text-left">
+                            <h5>T-Mobile (Factoria, WA)</h5>
+                            <p class="resumeJob"><strong>UX Designer/Front End Developer,</strong><i> 7/2017 – Present</i></p>
+                            <div class="resumeQualText">
+                                <div class="pBar pBar4"></div>
+                                <div class="diamond diamondVr diamondVr2"></div>
+                                <p class="resumeText">Work as designer for a team of engineers, creating mock-ups and redesigning old internal applications.<br>
+                                   &bull; Creates visual mock-ups and wireframes for web applications.<br>
+                                   &bull; Works with a constantly changing and diverse team of engineers, designers,
+                                   and programmers to create new applications.<br>
+                                   &bull; Implements highly interactive and responsive web pages based on designs that 
+                                   conform to both team and T-Mobile branding guidelines.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-9 text-left">
+                            <h5>Washington Gaming Association (Seattle, WA)</h5>
+                            <p class="resumeJob"><strong>Lead Graphic Designer,</strong> <i>10/2015 – 6/2016</i></p>
+                            <div class="resumeQualText">
+                                <div class="pBar pBar5"></div>
+                                <div class="diamond diamondVr diamondVr2"></div>
+                                <p class="resumeText">Led Branding Team for non-profit organization at UW, aiding all teams with creation of visual assets. Spearheaded process for defining and laying out branding guidelines for future projects. <br>
+                                   &bull; Developed and maintained excellent working relationship across teams by
+                                   clearly communicating team progress on new assets regularly.<br>
+                                   &bull; Collaborated on several passion projects outside of regular duties, including
+                                   educational presentations and helping form self-improvement programs for 
+                                   club members. 
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                        <img src="assets/Resume_assets-03.png" class="img-responsive resumeExp">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                        <img src="assets/Resume_assets-04.png" class="img-responsive resumeExp">
+                        </div>
+                        <div class="col-sm-9 text-left">
+                            <h5>SPSInteractive (Seattle, WA)</h5>
+                            <p class="resumeJob"><strong>UX Designer (Capstone Project),</strong> <i>1/2016 – 6/2016</i></p>
+                            <div class="resumeQualText">
+                                <div class="pBar pBar4"></div>
+                                <div class="diamond diamondVr diamondVr2"></div>
+                                <p class="resumeText">Key member in small team sponsored by Microsoft’s Technology and Civic Engagement Department. Driving force behind design choices and product branding, and leader in team communications. <br>
+                                   &bull; Shaped project development through design ideation, wireframes, usability 
+                                   testing, and brand design.<br>
+                                   &bull; Collaborated with teammates to create visual sales pitch for product,
+                                   earning the team the “Social Impact Award” at UW’s 2016 Capstone Night.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                    <!--<div class="buttonDiv" id="selfie">
                         <img src="assets/me.jpg" class="img-responsive buttonImage"/>
                         <div class="diamondRow">
                             <img src="assets/diamond-07.png" class="img-responsive diamonds diamonds2"/>
@@ -80,7 +206,7 @@
                     </div>
 
                     <p class="aboutText">My name is Jacob. I am a 
-                    <!-- I will not change this number more than once. Harumph. -->
+                    <!-- I will not change this number more than once. Harumph. --><!--
                     <script type ="text/javascript">
                         var age = _calcAge();
                         function _calcAge() {
@@ -94,30 +220,21 @@
                         document.write(Math.floor(age));
                     </script> 
                     year old UX/Graphic Designer from Auburn, Washington. <br><br>I attended the University of Washington, where I graduated with a Bachelor of Science in Informatics in 2016.<br><br>You can reach via <a href="mailto:jacob.leighty@gmail.com?Subject=Via%20portfolio" target="_top">email.</a><br><br><br>
-                    <!--<button id="resumeButton" class="btn btn-large btn-primary resumeBtn showResume" name="Continue" type="button">
-                        <span>Show Resume</span>
-                    </button>-->
                     </p>
 
                 </div>
                 <div class="col-md-6 resumeRow">
                     <div class="resume">
                         <embed src="assets/Resume.pdf" width="90%" height="700" type="application/pdf">
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-    </div>
-    
-
+                    </div>-->
+                </div> 
+            </div> 
+    </div> 
     
     <footer class="footer navbar-fixed-bottom">
 		<div>
 			<img src="assets/footer.png" class="img-responsive footerImage" id="footer">
 		</div> 
 	</footer>
-    
 </body>
-
 </html>
