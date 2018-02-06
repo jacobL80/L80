@@ -112,18 +112,21 @@ $(document).ready(function () {
         e.preventDefault(); 
        
         var id = $(this).attr("id");
+        var links = $(this).attr("list");
         
         $("#mainContent").css("overflow-y", "hidden");
         // Adds the sliding and fading effect
 		
         if (id === "ux" || id === "graphic" || id === "about") {
-            console.log("test2");
             $(".contentRowInner, .aboutContentOuter")
                 .css('opacity', 1)
                 .animate({ paddingTop: '5%', opacity: 0 }, 500, function() {
-                    console.log("test");
+                    console.log(links);
                     $(".navbarLinks").removeClass("selected");
+                    $(".links").children(".diamond").removeClass("dSelected");
                     $("a[id='" + id + "']").addClass("selected");
+                    console.log($("div[class='" + links + "']"));
+                    $("." + links).children(".diamond").addClass("dSelected");
                     $(".buttonDiv").addClass("hidden");
                     $(".contentRowOuter").removeClass("hidden");
                     $(".aboutContentOuter").addClass("hidden");

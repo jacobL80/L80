@@ -127,6 +127,12 @@ h1 {
     background-color: #FFF;
 }
 
+.dSelected {
+    background-color: #FFF;
+    opacity: .5;
+    pointer-events: none;
+}
+
 .navbarHr {
     border-color: #008FA1;
     background-color: #008FA1;
@@ -268,6 +274,12 @@ h2 {
     margin-top: -1.25em;
     width: 30px;
     height: 30px;
+}
+
+.selected {
+    color: #FFF!important;
+    opacity: .5;
+    pointer-events: none;
 }
 
 
