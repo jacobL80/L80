@@ -12,6 +12,7 @@ $(document).ready(function () {
         $.each(data.entries, function(i, option) {
             var entryId = option.entryId;
             var diamonds;
+            // Determines which color the diamond is per content block
             if (option.entryType === "ux") {
                 diamonds = "diamondContentL";
             } else {
