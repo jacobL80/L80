@@ -1,23 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="diamonds-01.png" server="l80.io" local="131509230320000000" remote="131611584600000000" Dst="1" />
-<file name="diamonds-02.png" server="l80.io" local="131607852250000000" remote="131611584600000000" Dst="1" />
-<file name="diamond-01.png" server="l80.io" local="131532718450000000" remote="131611584600000000" Dst="1" />
-<file name="diamond-03.png" server="l80.io" local="131532718450000000" remote="131611584600000000" Dst="1" />
-<file name="diamond-04.png" server="l80.io" local="131532718450000000" remote="131611584600000000" Dst="1" />
-<file name="diamond-06.png" server="l80.io" local="131532718450000000" remote="131611584600000000" Dst="1" />
-<file name="diamond-02.png" server="l80.io" local="131532718450000000" remote="131611584600000000" Dst="1" />
 <file name="me.jpg" server="l80.io" local="131392665760000000" remote="131611584600000000" Dst="1" />
 <file name="diamond-07.png" server="l80.io" local="131532722820000000" remote="131611584600000000" Dst="1" />
 <file name="Resume.pdf" server="l80.io" local="131607813810000000" remote="131611584600000000" Dst="1" />
 <file name="footer.png" server="l80.io" local="131509310940000000" remote="131611584600000000" Dst="1" />
-<file name="diamonds-01.png" server="l80.io/public_html/" local="131509230323592140" remote="131611589400000000" Dst="1" />
-<file name="diamonds-02.png" server="l80.io/public_html/" local="131607852257699970" remote="131611589400000000" Dst="1" />
-<file name="diamond-01.png" server="l80.io/public_html/" local="131532718451519310" remote="131611589400000000" Dst="1" />
-<file name="diamond-03.png" server="l80.io/public_html/" local="131532718451559416" remote="131611589400000000" Dst="1" />
-<file name="diamond-04.png" server="l80.io/public_html/" local="131532718451559416" remote="131611589400000000" Dst="1" />
-<file name="diamond-06.png" server="l80.io/public_html/" local="131532718451559416" remote="131611589400000000" Dst="1" />
-<file name="diamond-02.png" server="l80.io/public_html/" local="131532718451519310" remote="131611589400000000" Dst="1" />
 <file name="me.jpg" server="l80.io/public_html/" local="131392665760000000" remote="131611589400000000" Dst="1" />
 <file name="diamond-07.png" server="l80.io/public_html/" local="131532722820000000" remote="131611589400000000" Dst="1" />
 <file name="Resume.pdf" server="l80.io/public_html/" local="131611393710000000" remote="131612062800000000" Dst="1" />
@@ -31,4 +17,5 @@
 <file name="Resume_assets-02.png" server="l80.io/public_html/" local="131619974250875875" remote="131620069200000000" Dst="1" />
 <file name="Resume_assets-03.png" server="l80.io/public_html/" local="131619974251096476" remote="131620069200000000" Dst="1" />
 <file name="Resume_assets-04.png" server="l80.io/public_html/" local="131619974251166671" remote="131620069200000000" Dst="1" />
+<file name="frontpage.json" server="l80.io/public_html/" local="131621203631427567" remote="131621239200000000" Dst="1" />
 </dwsync>
