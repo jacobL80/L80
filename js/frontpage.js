@@ -146,7 +146,7 @@ $(document).ready(function () {
                     } 
             });
         } else {
-            window.open('http://l80comics.com', '_blank');
+            //window.open('http://l80comics.com', '_blank');
         }
         
         //Fades back in when complete
@@ -176,25 +176,25 @@ $(document).ready(function () {
     
     $(document).on("mouseover", "#navbarLinks li", function(e) {
         e.preventDefault(); 
-        $(this).children("a").css("color", "#FFF");
+        $(this).children("a").css("color", "#E15427");
         $(this).children(".diamond").addClass("hovered");
     });
 
     $(document).on("mouseout", "#navbarLinks li", function(e) {
         e.preventDefault(); 
-        $(this).children("a").css("color", "#E15427");
+        $(this).children("a").css("color", "#808080");
         $(this).children(".diamond").removeClass("hovered");
     });
     
     $(document).on("mouseover", ".navbar-header", function(e) {
         e.preventDefault(); 
-        $("h1").css("color", "#FFF");
+        $("h1").css("color", "#E15427");
         $(".navbar-header .diamond").addClass("hovered");
     });
 
     $(document).on("mouseout", ".navbar-header", function(e) {
         e.preventDefault(); 
-        $("h1").css("color", "#EFE5D1");
+        $("h1").css("color", "#808080");
         $(".navbar-header .diamond").removeClass("hovered");
     });
     

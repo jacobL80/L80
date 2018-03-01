@@ -4,26 +4,17 @@ html, body {
 
 body {
     font-family: lato, sans-serif;
-    background-color: #04213E;
-    color: #c7a96f;
+    color: #808080;
     position: relative;
-}
-
-.diamond {
-    position: relative;    
+    letter-spacing: 8px;
+    max-width: 1300px;
     margin: auto;
-    margin-top: 1em;
-    margin-bottom: -2.3em;
-    height: auto;
-    width: auto;
-    text-align: center;
-    height: 2.1em; 
-    width: 2.1em;  
-    border: 5px solid #008D9F;
-    transform: rotateX(0deg) rotateZ(45deg);
-    background-color: #04213E;
 }
 
+p, a, li {
+    color: #808080;
+    letter-spacing: 4px;
+}
 
 
 
@@ -34,11 +25,12 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-	color: #EFE5D1;
-	font-weight: 1000;
+	color: #808080;
+	font-weight: 600;
+    letter-spacing: 10px;
 	margin: 0 auto;
     margin-left: 15px;
-	font-size: 4em;
+	font-size: 2.5em;
     float: left;
     transition: .2s ease;
 }
@@ -60,31 +52,27 @@ h1 {
 }
 
 #mainNavbar {
-    background-color: #04213E;
+    background-color: #FFF;
     border-width: 0; 
     line-height: 64px;
 	z-index: 10;
 	margin-bottom: 0;
 	position: absolute;
-	-webkit-perspective: 1000;
-	-webkit-transform-style: preserve-3d;
-    -webkit-transform: translateZ(0);
-    -webkit-backface-visibility:hidden; 
-    -webkit-font-smoothing: antialiased;
+    padding-top: 3em;
 }
 
 #navbarLinks {
-    font-size: 1.8em;
-    font-weight: 1000;
+    font-size: 1.4em;
+    font-weight: 600;
     margin-right: 0;
-	padding-left: 1em;
+	padding-left: 2em;
     
 }
 
 #navbarLinks a {
 	padding: .15em .8em .15em 1.1em;
     text-transform: uppercase;
-	color: #E15427;
+	color: #808080;
     background-size: contain;
     background-repeat: no-repeat;
     display: inline-block;
@@ -93,34 +81,6 @@ h1 {
     position: relative;
     cursor: pointer;
     transition: .2s ease;
-}
-
-.diamondNav {
-    float: left;
-    background-color: #E15427;
-    border: 0px;
-    width: 20px;
-    height: 20px;
-    transition: .2s ease;
-    cursor: pointer;
-}
-
-.diamondNav2 {
-    background-color: #008FA1;
-}
-
-.diamondNav3 {
-    background-color: #EFE5D1;
-}
-
-.diamondNav4 {
-    background-color: #C7A96F;
-}
-
-.diamondLogo {
-    width: 30px;
-    height: 30px;
-    margin-left: 12px;
 }
 
 .hovered {
@@ -150,10 +110,26 @@ h1 {
 #mainContent {
     width: 100%;
     margin: auto;
-	height: calc(100vh - 85px);
-    top: 65px;
+	height: calc(100vh - 170px);
+    top: 105px;
     position: relative;
 	overflow-y: auto;
+}
+
+.heroDiv {
+    height: 350px;
+    display: flex;
+}
+
+.hero {
+    position: relative;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1.4em;
+    margin: auto;
+    width: 700px;
+    text-align: center;
+    line-height: 3em;
 }
 
 h2 {
@@ -807,11 +783,31 @@ embed {
 	width: 100%;
 	position: fixed;
 	z-index: 10;
+    background-color: #f2f2f2;
 }
 
-.footerImage {
-	height: 20px;
-    width: 100%;
+.contactInfo {
+    margin: auto;
+    width: fit-content;
+}
+
+.footerLinks {
+    display: inline-flex;
+    list-style: none;
+    padding-top: 1.5em;
+    padding-bottom: 1em;
+    text-transform: uppercase;
+}
+
+.footerContact { 
+    padding-right: 2em;
+    transition: .2s ease;
+}
+
+.footerContact:hover {
+    color: #E15427;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 
