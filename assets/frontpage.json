@@ -1,12 +1,5 @@
 {
     "entries": [{
-        "entryId": 11,
-        "entryName": "L80.io",
-        "overlay": "UX/UI and web programming for my personal portfolio site.",
-        "releaseDate": "February 2018",
-        "imgSource": "l80",
-        "entryType": "ux"
-    }, {
         "entryId": 10,
         "entryName": "(T-Mobile) Event Posters",
         "overlay": "Graphic design for a variety of in-house T-Mobile events.",

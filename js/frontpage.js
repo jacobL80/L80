@@ -1,5 +1,6 @@
 var baseURL = 'http://l80.io/assets/frontpage.json';
 //var baseURL = 'https://api.myjson.com/bins/gugs1'; // For testing
+var featuredNo = 8; // Number of entries on front page
 
 $(document).ready(function () {
     "use strict";
@@ -18,7 +19,7 @@ $(document).ready(function () {
             } else {
                 diamonds = "diamondContentL diamondNav2";
             }
-            if (entryCounter < 10) {
+            if (entryCounter < featuredNo) {
                 $('<div class="buttonDiv" id="' + entryId + '" type="' + option.entryType + '"><img src="assets/tiles/' + option.imgSource + '.png" class="img-responsive buttonImage" parentId="' + entryId + '"/><div class="overlay" parentId="' + entryId + '"><div class="text">' + option.overlay + '</div></div>    <div class="diamondRow"><div class="diamondRowInner"><div class="diamond diamondContent"></div><div class="diamond diamondNav diamondContent ' + diamonds + '"></div><div class="diamond diamondContent"></div></div>   </div><button id="' + entryId + 'Button" class="btn btn-large btn-primary sectionButton" name="Continue" type="button"><span class="' + entryId + '">' + option.entryName + '</span><p class="date">' + option.releaseDate + '</p><i class="icon-ok" style="font-size:30px; vertical-align: middle;"></i></button></div>').appendTo('.contentRowInner');
                 $('<div modalNum="' + entryId + '" id="modal' + entryId + '" class="modal"><div class="container modal-content"><div class="row modalRow text-center" style="height:7%"><span class="close">&times;</span><p class="col-sm-12 modalText">' + option.entryName + '</p></div><div class="row modalRow" style="height:93%"><div class="modalBlock" id="modalBlock' + entryId + '"></div></div></div></div>').appendTo('body');
             } else {
@@ -72,7 +73,7 @@ $(document).ready(function () {
     
     
     
-    // Displays only the 10 newest entries
+    // Displays only the featuredNo number of newest entries
     $(document).on("click", ".navbar-header", function(e) {
         e.preventDefault();
 		var id = $("h2").attr("id");
@@ -89,11 +90,12 @@ $(document).ready(function () {
                         $(".contentRowOuter").removeClass("hidden");
                         $(".buttonDiv").removeClass("hidden");
                         $(".navbarLinks").removeClass("selected");
+						$(".links").children(".diamond").removeClass("dSelected");
 
                         var entryCounter = 0;
                         $(".buttonDiv").each(function() {
                             entryCounter++;
-                            if (entryCounter > 10) {
+                            if (entryCounter > featuredNo) {
                                 $(this).addClass("hidden");
                             }
                         });
@@ -110,6 +112,7 @@ $(document).ready(function () {
     //Handles click events for each menu option. Some are new pages and some are toggles
     $(document).on("click", ".navbarLinks", function(e) {
         e.preventDefault(); 
+		$(".links").css("pointer-events", "none"); //Prevents users from double tapping to double the animation
        
         var id = $(this).attr("id");
         var links = $(this).attr("list");
@@ -121,11 +124,9 @@ $(document).ready(function () {
             $(".contentRowInner, .aboutContentOuter")
                 .css('opacity', 1)
                 .animate({ paddingTop: '5%', opacity: 0 }, 500, function() {
-                    console.log(links);
                     $(".navbarLinks").removeClass("selected");
                     $(".links").children(".diamond").removeClass("dSelected");
                     $("a[id='" + id + "']").addClass("selected");
-                    console.log($("div[class='" + links + "']"));
                     $("." + links).children(".diamond").addClass("dSelected");
                     $(".buttonDiv").addClass("hidden");
                     $(".contentRowOuter").removeClass("hidden");
@@ -154,7 +155,10 @@ $(document).ready(function () {
             .css('opacity', 0)
             .animate({ paddingTop: '0%', opacity: 1 }, 500, function() {
                 $("#mainContent").css("overflow-y", "auto");
+				$(".links").css("pointer-events", "auto");
         });
+		
+		
     });      
     
     //Handles hover over featured entries on Front Page
