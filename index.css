@@ -800,14 +800,21 @@ embed {
 }
 
 .footerContact { 
-    padding-right: 2em;
+    margin-right: 1.5em;
     transition: .2s ease;
+    font-weight: 600;
 }
 
 .footerContact:hover {
     color: #E15427;
     text-decoration: none;
     cursor: pointer;
+}
+
+.footerSlash:hover {
+    color: unset;
+    text-decoration: none;
+    cursor: default;
 }
 
 
