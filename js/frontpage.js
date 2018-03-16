@@ -1,5 +1,5 @@
-var baseURL = 'http://l80.io/assets/frontpage.json';
-//var baseURL = 'https://api.myjson.com/bins/gugs1'; // For testing
+//var baseURL = 'http://l80.io/assets/frontpage.json';
+var baseURL = 'https://api.myjson.com/bins/gugs1'; // For testing
 
 $(document).ready(function () {
     "use strict";
@@ -19,10 +19,10 @@ $(document).ready(function () {
                 diamonds = "diamondContentL diamondNav2";
             }
             if (entryCounter < 10) {
-                $('<div class="buttonDiv" id="' + entryId + '" type="' + option.entryType + '"><img src="assets/tiles/' + option.imgSource + '.png" class="img-responsive buttonImage" parentId="' + entryId + '"/><div class="overlay" parentId="' + entryId + '"><div class="text">' + option.overlay + '</div></div>    <div class="diamondRow"><div class="diamondRowInner"><div class="diamond diamondContent"></div><div class="diamond diamondNav diamondContent ' + diamonds + '"></div><div class="diamond diamondContent"></div></div>   </div><button id="' + entryId + 'Button" class="btn btn-large btn-primary sectionButton" name="Continue" type="button"><span class="' + entryId + '">' + option.entryName + '</span><p class="date">' + option.releaseDate + '</p><i class="icon-ok" style="font-size:30px; vertical-align: middle;"></i></button></div>').appendTo('.contentRowInner');
+                $('<div class="buttonDiv" id="' + entryId + '" type="' + option.entryType + '"><img src="assets/tiles/' + option.imgSource + '.png" class="img-responsive buttonImage" parentId="' + entryId + '"/><div class="overlay" parentId="' + entryId + '"><div class="text"> <span class="title ' + entryId + '">' + option.entryName + '</span><br><span class="date">' + option.releaseDate + '</span><hr class="overlayHr">' + option.overlay + '</div></div></div>').appendTo('.contentRowInner');
                 $('<div modalNum="' + entryId + '" id="modal' + entryId + '" class="modal"><div class="container modal-content"><div class="row modalRow text-center" style="height:7%"><span class="close">&times;</span><p class="col-sm-12 modalText">' + option.entryName + '</p></div><div class="row modalRow" style="height:93%"><div class="modalBlock" id="modalBlock' + entryId + '"></div></div></div></div>').appendTo('body');
             } else {
-                $('<div class="buttonDiv hidden" id="' + entryId + '" type="' + option.entryType + '"><img src="assets/tiles/' + option.imgSource + '.png" class="img-responsive buttonImage" parentId="' + entryId + '"/><div class="overlay" parentId="' + entryId + '"><div class="text">' + option.overlay + '</div></div>     <div class="diamondRow"><div class="diamondRowInner"><div class="diamond diamondContent"></div><div class="diamond diamondNav diamondContent ' + diamonds + '"></div><div class="diamond diamondContent"></div></div>    </div><button id="' + entryId + 'Button" class="btn btn-large btn-primary sectionButton" name="Continue" type="button"><span class="' + entryId + '">' + option.entryName + '</span><p class="date">' + option.releaseDate + '</p><i class="icon-ok" style="font-size:30px; vertical-align: middle;"></i></button></div><div modalNum="' + entryId + '" id="modal' + entryId + '" class="modal"><div class="container modal-content"><div class="row modalRow text-center" style="height:7%"><span class="close">&times;</span><p class="col-sm-12 modalText">' + option.entryName + '</p></div><div class="row modalRow" style="height:93%"><div class="modalBlock" id="modalBlock' + entryId + '"></div></div></div></div>').appendTo('.contentRowInner');
+                $('<div class="buttonDiv hidden" id="' + entryId + '" type="' + option.entryType + '"><img src="assets/tiles/' + option.imgSource + '.png" class="img-responsive buttonImage" parentId="' + entryId + '"/><div class="overlay" parentId="' + entryId + '"><div class="text"> <span class="title ' + entryId + '">' + option.entryName + '</span><br><span class="date">' + option.releaseDate + '</span><hr class="overlayHr">' + option.overlay + '</div></div> </div><div modalNum="' + entryId + '" id="modal' + entryId + '" class="modal"><div class="container modal-content"><div class="row modalRow text-center" style="height:7%"><span class="close">&times;</span><p class="col-sm-12 modalText">' + option.entryName + '</p></div><div class="row modalRow" style="height:93%"><div class="modalBlock" id="modalBlock' + entryId + '"></div></div></div></div>').appendTo('.contentRowInner');
             }
             entryCounter++;
         });
@@ -161,17 +161,19 @@ $(document).ready(function () {
     $(document).on("mouseover", ".buttonDiv", function(e) {
         e.preventDefault(); 
         var id = $(this).attr("id");
-        $("img[parentId='" + id + "']").css("background", "rgba(0,140,186,.7)");
-        $("div[parentId='" + id + "']").css("background", "rgba(0,140,186,.7)");
+        $("img[parentId='" + id + "']").css("background", "rgba(5,36,64,.8)");
+        $("div[parentId='" + id + "']").css("background", "rgba(5,36,64,.8)");
         $("div[parentId='" + id + "'] .text").css("color", "rgba(255,255,255,1)");
+        $("div[parentId='" + id + "'] .overlayHr").css("opacity", "1");
     });
     
     $(document).on("mouseout", ".buttonDiv", function(e) {
         e.preventDefault(); 
         var id = $(this).attr("id");
-        $("img[parentId='" + id + "']").css("background", "rgba(0,140,186,1)");
-        $("div[parentId='" + id + "']").css("background", "rgba(0,140,186,0)");
+        $("img[parentId='" + id + "']").css("background", "rgba(5,36,64,1)");
+        $("div[parentId='" + id + "']").css("background", "rgba(5,36,64,0)");
         $("div[parentId='" + id + "'] .text").css("color", "rgba(255,255,255,0)");
+        $("div[parentId='" + id + "'] .overlayHr").css("opacity", "0");
     });
     
     $(document).on("mouseover", "#navbarLinks li", function(e) {
@@ -182,7 +184,7 @@ $(document).ready(function () {
 
     $(document).on("mouseout", "#navbarLinks li", function(e) {
         e.preventDefault(); 
-        $(this).children("a").css("color", "#808080");
+        $(this).children("a").css("color", "#efe5d1");
         $(this).children(".diamond").removeClass("hovered");
     });
     
@@ -194,7 +196,7 @@ $(document).ready(function () {
 
     $(document).on("mouseout", ".navbar-header", function(e) {
         e.preventDefault(); 
-        $("h1").css("color", "#808080");
+        $("h1").css("color", "#efe5d1");
         $(".navbar-header .diamond").removeClass("hovered");
     });
     

@@ -4,7 +4,8 @@ html, body {
 
 body {
     font-family: lato, sans-serif;
-    color: #808080;
+    background-color: #04213E;
+    color: #efe5d1;
     position: relative;
     letter-spacing: 8px;
     max-width: 1300px;
@@ -12,7 +13,7 @@ body {
 }
 
 p, a, li {
-    color: #808080;
+    color: #efe5d1;
     letter-spacing: 4px;
 }
 
@@ -25,12 +26,13 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-	color: #808080;
+	color: #efe5d1;
 	font-weight: 600;
     letter-spacing: 10px;
 	margin: 0 auto;
     margin-left: 15px;
 	font-size: 2.5em;
+    padding-top: .5em;
     float: left;
     transition: .2s ease;
 }
@@ -41,6 +43,7 @@ h1 {
 
 .navbar-brand {
     height: auto;
+    width: 100%;
 }
 
 #navbarLogo {
@@ -52,13 +55,19 @@ h1 {
 }
 
 #mainNavbar {
-    background-color: #FFF;
+    background-color: #04213E;
     border-width: 0; 
     line-height: 64px;
 	z-index: 10;
 	margin-bottom: 0;
-	position: absolute;
-    padding-top: 3em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+#navbar {
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #navbarLinks {
@@ -72,7 +81,7 @@ h1 {
 #navbarLinks a {
 	padding: .15em .8em .15em 1.1em;
     text-transform: uppercase;
-	color: #808080;
+	color: #efe5d1;
     background-size: contain;
     background-repeat: no-repeat;
     display: inline-block;
@@ -113,12 +122,13 @@ h1 {
 	height: calc(100vh - 170px);
     top: 105px;
     position: relative;
-	overflow-y: auto;
+	/*overflow-y: auto;*/
 }
 
 .heroDiv {
-    height: 350px;
+    height: 300px;
     display: flex;
+    padding-bottom: 50px;
 }
 
 .hero {
@@ -155,12 +165,17 @@ h2 {
 .contentRowInner, .aboutContentInner {
     max-width: 1400px;
 }
+
+.contentRowInner {
+    padding-bottom: 5em;
+}
  
 .buttonDiv {
     cursor: pointer;
-    width: 15em;
+    width: 48%;
+    height: auto;
     min-width: 15em;
-    margin: 1em 2em 5em;
+    margin: .5em;
     display: inline-block;
     position: relative;
     transition: .2s ease;
@@ -190,7 +205,7 @@ h2 {
 .buttonImage {
     width: 100%;
     border-color: #008FA1;
-    border-width: 5px;
+    border-width: 0px;
     border-style: solid;
     backface-visibility: hidden;
 }
@@ -201,7 +216,7 @@ h2 {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 15em;
+  height: auto;
   width: 100%;
   /*opacity: 0;*/
   transition: .2s ease;
@@ -210,7 +225,8 @@ h2 {
 
 .text {
     color: rgba(255,255,255,0);
-    font-size: 1em;
+    letter-spacing: 2px;
+    font-size: 1.4em;
     position: absolute;
     top: 50%;
     left: 20%;
@@ -219,9 +235,21 @@ h2 {
     transform: translate(-12%, -50%); /* change back to 50% for this and left if things suck */
 }
 
+.title {
+    font-weight: 1000;
+    font-size: 2em;
+}
+
 .date {
     font-weight: 100;
     font-style: italic;
+}
+
+.overlayHr {
+    border-width: 5px;
+    border-color: #E15427;
+    width: 50%;
+    opacity: 0;
 }
 
 .diamondRow {
@@ -779,11 +807,12 @@ embed {
 /* Footer styles */
 
 .footer {
+    background-color: #001630;
 	bottom: 0;
 	width: 100%;
 	position: fixed;
 	z-index: 10;
-    background-color: #f2f2f2;
+    height: 4.2em;
 }
 
 .contactInfo {
