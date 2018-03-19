@@ -38,25 +38,35 @@
                 <li class="links links2"><div class="diamond diamondNav diamondNav2"></div><a class="navbarLinks navbarLinks2" id="graphic" list="links2">Graphic Design</a></li>
                 <li class="links links3"><div class="diamond diamondNav diamondNav3"></div><a class="navbarLinks navbarLinks3" id="comics" list="links3">Personal Site</a></li>
                 <li class="links links4"><div class="diamond diamondNav diamondNav4"></div><a class="navbarLinks navbarLinks4" id="about" list="links4">About</a></li>-->
-                <li class="links"><div class=""></div><a class="navbarLinks" id="works">Works</a></li>
-                <li class="links"><div class=""></div><a class="navbarLinks" id="about">About</a></li>
-                <li class="links"><div class=""></div><a class="navbarLinks" id="resume">Resume</a></li>
+                <li class="navLinks"><a class="navbarLinks selected" id="works">Works</a><div class="trianglePointer worksTriangle viewable"></div></li>
+                <li class="navLinks"><a class="navbarLinks" id="about">About</a><div class="trianglePointer aboutTriangle"></div></li>
+                <li class="navLinks"><a class="navbarLinks" id="resume" href="assets/Resume v5.pdf" target="_blank">Resume</a><div class="trianglePointer resumeTriangle"></div></li>
             </ul>
         </div>
     </nav>
 
     <div id="mainContent">
-        <div class="heroDiv">
-            <p class="hero">Hi! my name is jacob, and I’m a user experience and graphic designer based in Seattle, WA.</p>  
-        </div>
+        
         <div class="row contentRowOuter">
+            <div class="heroDiv">
+                <p class="hero hero2">Hi! my name is Jacob.</p> 
+                <p class="hero">I’m a <strong>user experience</strong> and <strong>graphic designer</strong> based in Seattle, WA.</p>  
+            </div>
+            <ul class="sort">
+                <li class="sortLinks"><a class="sortLinks selected" id="new" list="links1">6 Newest Entries</a><div class="trianglePointer newTriangle viewable"></div></li>
+                <li class="sortLinks"><a class="sortLinks" id="ux" list="links1">Ux/UI Design</a><div class="trianglePointer uxTriangle"></div></li>
+                <li class="sortLinks"><a class="sortLinks" id="graphic" list="links2">Graphic Design</a><div class="trianglePointer graphicTriangle"></div></li>
+                <!--<li class="sortLinks"><a class="navbarLinks" id="code" list="links2">Coding</a></li>-->
+            </ul>
             <div class="row contentRowInner">
+				
                  <!--  CONTENT GOES HERE  -->
             </div>  
         </div>
         
         <div class="row aboutContentOuter hidden">
             <div class="row aboutContentInner">
+                <!--
                 <div class="container-fluid resume">
                     <div class="row">
                         <div class="col-sm-3">
@@ -64,7 +74,7 @@
                         </div>
                         <div class="col=sm-9">
                             <h4>Jacob Leighty</h4>
-                            <hr class="resumeHr">
+                            <hr class="resumeHr">-->
                             <p class="resumeText text-left">My name is Jacob, and I'm a 
                                 <!-- I will not change this number more than once. Harumph. -->
                                 <script type ="text/javascript">
@@ -79,12 +89,12 @@
                                     }
                                     document.write(Math.floor(age));
                                 </script> 
-                            year old designer from Auburn, Washington. In my free time, I enjoy listening to music (both at home and live), playing competitive video games, playing tennis and badminton, and going on long walks.</p><br>
+                            year old designer from Auburn, Washington. In my free time, I enjoy listening to music (both at home and live), playing competitive video games, playing tennis and badminton, and going on long walks.</p><br><!--
                         </div>
                     </div>
                     <hr class="resumeHr">
 
-                    <!-- Contact Me -->
+                    <!-- Contact Me --><!--
                     <div class="row">
                         <div class="col-sm-12">
                             <h5 class="text-center">Contact Information</h5>
@@ -98,7 +108,7 @@
                     <br>
                     <hr class="resumeHr">
                     
-                    <!-- Qualifications -->
+                    <!-- Qualifications --><!--
                     <div class="row">
                         <div class="col-sm-8 text-left">
                             <h4 class="resumeSubtitle">Qualifications</h4>
@@ -115,7 +125,7 @@
                     <br>
                     <hr class="resumeHr">
 
-                    <!-- Education -->
+                    <!-- Education --><!--
                     <div class="row">
                         <div class="col-sm-12 text-left">
                             <h4 class="resumeSubtitle">Education</h4>
@@ -140,7 +150,7 @@
                     <br>
                     <hr class="resumeHr">
 
-                    <!-- Experience -->
+                    <!-- Experience --><!--
                     <h4 class="resumeSubtitle text-left">Experience</h4>
                     <div class="row">
                         <div class="col-sm-3">
@@ -240,10 +250,10 @@
     <footer class="footer navbar-fixed-bottom">
 		<div class="contactInfo">
 			<ul class="footerLinks" id="footerLinks">
-                <li class="fLinks"><a class="footerContact">Phone</a></li><p class="footerContact footerSlash">/</p>
-                <li class="fLinks"><a class="footerContact">Email</a></li><p class="footerContact footerSlash">/</p>
-                <li class="fLinks"><a class="footerContact">LinkedIn</a></li><p class="footerContact footerSlash">/</p>
-                <li class="fLinks"><a class="footerContact">Github</a></li>
+                <li class="fLinks"><a class="footerContact" href="tel:2538806289" target="_top">Phone</a></li><p class="footerContact footerSlash">/</p>
+                <li class="fLinks"><a class="footerContact" href="mailto:jacob.leighty@gmail.com?Subject=Via%20portfolio" target="_top">Email</a></li><p class="footerContact footerSlash">/</p>
+                <li class="fLinks"><a class="footerContact" href="https://linkedin.com/in/jacob-leighty" target="_blank">LinkedIn</a></li><!--<p class="footerContact footerSlash">/</p>
+                <li class="fLinks"><a class="footerContact" href="https://github.com/jacobL80" target="_top">Github</a></li>-->
             </ul>
 		</div> 
 	</footer>

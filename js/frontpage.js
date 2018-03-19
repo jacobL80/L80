@@ -1,24 +1,16 @@
 //var baseURL = 'http://l80.io/assets/frontpage.json';
 var baseURL = 'https://api.myjson.com/bins/gugs1'; // For testing
+var numberOfEntries = 6;
 
 $(document).ready(function () {
     "use strict";
-    
-
     
     // Loads JSON file info into featured entries boxes on Front Page
     $.getJSON(baseURL, function(data) {
         var entryCounter = 0;
         $.each(data.entries, function(i, option) {
             var entryId = option.entryId;
-            var diamonds;
-            // Determines which color the diamond is per content block
-            if (option.entryType === "ux") {
-                diamonds = "diamondContentL";
-            } else {
-                diamonds = "diamondContentL diamondNav2";
-            }
-            if (entryCounter < 10) {
+            if (entryCounter < numberOfEntries) {
                 $('<div class="buttonDiv" id="' + entryId + '" type="' + option.entryType + '"><img src="assets/tiles/' + option.imgSource + '.png" class="img-responsive buttonImage" parentId="' + entryId + '"/><div class="overlay" parentId="' + entryId + '"><div class="text"> <span class="title ' + entryId + '">' + option.entryName + '</span><br><span class="date">' + option.releaseDate + '</span><hr class="overlayHr">' + option.overlay + '</div></div></div>').appendTo('.contentRowInner');
                 $('<div modalNum="' + entryId + '" id="modal' + entryId + '" class="modal"><div class="container modal-content"><div class="row modalRow text-center" style="height:7%"><span class="close">&times;</span><p class="col-sm-12 modalText">' + option.entryName + '</p></div><div class="row modalRow" style="height:93%"><div class="modalBlock" id="modalBlock' + entryId + '"></div></div></div></div>').appendTo('body');
             } else {
@@ -44,118 +36,138 @@ $(document).ready(function () {
                 if (hash === "ux" || hash === "graphic" || hash === "about") { 
                     $(".navbarLinks").removeClass("selected");
 					$("a[id='" + hash + "']").addClass("selected");
-                    $("h2").attr("id", hash);
                 }
                 if (hash === "ux") {
-                    $("h2").text("UX/UI Design & Coding");
                     $(".contentRowOuter").addClass("hidden");
                     $(".navbarLinks1").trigger("click", function() {
                         $(".contentRowOuter").removeClass("hidden");
                     });
                 } else if (hash === "graphic") {
-                    $("h2").text("Graphic Design");
                     $(".contentRowOuter").addClass("hidden");
                     $(".navbarLinks2").trigger("click", function () {
                         $(".contentRowOuter").removeClass("hidden");
                     });
                 } else if (hash === "about") {
-                    $("h2").text("About");
                     $(".contentRowOuter").addClass("hidden");
                     $(".aboutContentOuter").removeClass("hidden");
+                    $(".worksTriangle").removeClass("viewable");
+                    $(".aboutTriangle").addClass("viewable");
                 }
             }
-        } else {
-            $("h2").text("Featured Entries");
         }
     });
 
     
     
     
-    // Displays only the 10 newest entries
-    $(document).on("click", ".navbar-header", function(e) {
+    // Displays only the X newest entries
+    $(document).on("click", ".navbar-header, #works, #new", function(e) {
         e.preventDefault();
-		var id = $("h2").attr("id");
-        if (id === "ux" || id === "graphic" || id === "about") {
-            $("h2").attr("id", " ");
-            history.replaceState('data', '', 'http://L80.io');
-            $("#mainContent").css("overflow-y", "hidden");
-            // Adds the sliding and fading effect
-            $(".contentRowInner, .aboutContentOuter")
-                    .css('opacity', 1)
-                    .animate({ paddingTop: '5%', opacity: 0 }, 500, function() {
-                        $("h2").text("Featured Entries");
-                        $(".aboutContentOuter").addClass("hidden");
-                        $(".contentRowOuter").removeClass("hidden");
-                        $(".buttonDiv").removeClass("hidden");
-                        $(".navbarLinks").removeClass("selected");
-
-                        var entryCounter = 0;
-                        $(".buttonDiv").each(function() {
-                            entryCounter++;
-                            if (entryCounter > 10) {
-                                $(this).addClass("hidden");
-                            }
-                        });
-            });
-            //Fades back in when complete
-            $(".contentRowInner, .aboutContentOuter")
-                .css('opacity', 0)
-                .animate({ paddingTop: '0%', opacity: 1 }, 500, function() {
-                    $("#mainContent").css("overflow-y", "auto");
-            });
+        history.replaceState('data', '', 'http://L80.io');
+        var selectedDiv = "";
+        
+        if ($(this).attr("id") === "new") {
+            selectedDiv = ".contentRowInner";
+        } else {
+            selectedDiv = ".contentRowOuter";
         }
+        // Adds the sliding and fading effect
+        $(selectedDiv + ", .aboutContentOuter")
+                .css('opacity', 1)
+                .animate({ paddingTop: '5%', opacity: 0 }, 500, function() {
+                    $("h2").text("Featured Entries");
+                    $(".aboutContentOuter").addClass("hidden");
+                    $(selectedDiv).removeClass("hidden");
+                    $(".buttonDiv").removeClass("hidden");
+                    $(".sortLinks").removeClass("selected");
+                    $(".navbarLinks").removeClass("selected");
+                    $("#new").addClass("selected");
+                    $("#works").addClass("selected");
+            
+                    $("#navbarLinks li .trianglePointer").removeClass("viewable");
+                    $(".worksTriangle").addClass("viewable");
+                    $(".sort li .trianglePointer").removeClass("viewable");
+                    $(".newTriangle").addClass("viewable");
+
+                    var entryCounter = 0;
+                    $(".buttonDiv").each(function() {
+                        entryCounter++;
+                        if (entryCounter > numberOfEntries) {
+                            $(this).addClass("hidden");
+                        }
+                    });
+        });
+        //Fades back in when complete
+        $(selectedDiv + ", .aboutContentOuter")
+            .css('opacity', 0)
+            .animate({ paddingTop: '0%', opacity: 1 }, 500);
+
     });
     
     //Handles click events for each menu option. Some are new pages and some are toggles
-    $(document).on("click", ".navbarLinks", function(e) {
+    $(document).on("click", "#about", function(e) {
         e.preventDefault(); 
        
         var id = $(this).attr("id");
-        var links = $(this).attr("list");
+        //var links = $(this).attr("list");
         
-        $("#mainContent").css("overflow-y", "hidden");
         // Adds the sliding and fading effect
-		
-        if (id === "ux" || id === "graphic" || id === "about") {
-            $(".contentRowInner, .aboutContentOuter")
+        $(".contentRowOuter, .aboutContentOuter")
+            .css('opacity', 1)
+            .animate({ paddingTop: '5%', opacity: 0 }, 500, function() {
+                $(".navbarLinks").removeClass("selected");
+                $(".worksTriangle").removeClass("viewable");
+                //$(".links").children(".diamond").removeClass("dSelected");
+                $("a[id='" + id + "']").addClass("selected");
+                $("." + id + "Triangle").addClass("viewable");
+                //$("." + links).children(".diamond").addClass("dSelected");
+                $(".buttonDiv").addClass("hidden");
+                $(".contentRowOuter").removeClass("hidden");
+                $(".aboutContentOuter").addClass("hidden");
+
+                history.replaceState('data', '', 'http://L80.io/#' + id);
+                $(".buttonDiv[type='" + id + "']").removeClass("hidden");
+
+                if (id === "about") {
+                    $(".contentRowOuter").addClass("hidden");
+                    $(".aboutContentOuter").removeClass("hidden");
+                } 
+        });
+        
+        //Fades back in when complete
+        $(".contentRowOuter, .aboutContentOuter")
+            .css('opacity', 0)
+            .animate({ paddingTop: '0%', opacity: 1 }, 500);
+    });    
+    
+    //Handles click events for content sorting
+    $(document).on("click", ".sortLinks", function(e) {
+        e.preventDefault(); 
+        var id = $(this).attr("id");
+        
+        // Adds the sliding and fading effect
+        if (id === "ux" || id === "graphic" /*|| id === "new"*/) {
+            $(".contentRowInner")
                 .css('opacity', 1)
                 .animate({ paddingTop: '5%', opacity: 0 }, 500, function() {
-                    console.log(links);
-                    $(".navbarLinks").removeClass("selected");
-                    $(".links").children(".diamond").removeClass("dSelected");
+                    $(".sortLinks").removeClass("selected");
                     $("a[id='" + id + "']").addClass("selected");
-                    console.log($("div[class='" + links + "']"));
-                    $("." + links).children(".diamond").addClass("dSelected");
                     $(".buttonDiv").addClass("hidden");
                     $(".contentRowOuter").removeClass("hidden");
-                    $(".aboutContentOuter").addClass("hidden");
+                    $(".sort li .trianglePointer").removeClass("viewable");
+                    $("." + id + "Triangle").addClass("viewable");
                     
-                    $("h2").attr("id", id);
                     history.replaceState('data', '', 'http://L80.io/#' + id);
                     $(".buttonDiv[type='" + id + "']").removeClass("hidden");
                     
-                    if (id === "ux") {
-                        $("h2").text("UX/UI Design & Coding");
-                    } else if (id === "graphic") {
-                        $("h2").text("Graphic Design");
-                    } else if (id === "about") {
-                        $("h2").text("About");
-                        $(".contentRowOuter").addClass("hidden");
-                        $(".aboutContentOuter").removeClass("hidden");
-                    } 
             });
-        } else {
-            //window.open('http://l80comics.com', '_blank');
-        }
-        
-        //Fades back in when complete
-        $(".contentRowInner, .aboutContentOuter")
-            .css('opacity', 0)
-            .animate({ paddingTop: '0%', opacity: 1 }, 500, function() {
-                $("#mainContent").css("overflow-y", "auto");
-        });
-    });      
+            
+            //Fades back in when complete
+            $(".contentRowInner")
+                .css('opacity', 0)
+                .animate({ paddingTop: '0%', opacity: 1 }, 500);
+        }   
+    });
     
     //Handles hover over featured entries on Front Page
     $(document).on("mouseover", ".buttonDiv", function(e) {
@@ -176,28 +188,26 @@ $(document).ready(function () {
         $("div[parentId='" + id + "'] .overlayHr").css("opacity", "0");
     });
     
-    $(document).on("mouseover", "#navbarLinks li", function(e) {
+    $(document).on("mouseover", "#navbarLinks li, .sort li", function(e) {
         e.preventDefault(); 
-        $(this).children("a").css("color", "#E15427");
-        $(this).children(".diamond").addClass("hovered");
+        $(this).children("a").css("opacity", ".3");
+        $(this).children(".trianglePointer").css("opacity", ".3");
     });
 
-    $(document).on("mouseout", "#navbarLinks li", function(e) {
+    $(document).on("mouseout", "#navbarLinks li, .sort li", function(e) {
         e.preventDefault(); 
-        $(this).children("a").css("color", "#efe5d1");
-        $(this).children(".diamond").removeClass("hovered");
+        $(this).children("a").css("opacity", "1");
+        $(this).children(".trianglePointer").css("opacity", "0");
     });
     
     $(document).on("mouseover", ".navbar-header", function(e) {
         e.preventDefault(); 
         $("h1").css("color", "#E15427");
-        $(".navbar-header .diamond").addClass("hovered");
     });
 
     $(document).on("mouseout", ".navbar-header", function(e) {
         e.preventDefault(); 
         $("h1").css("color", "#efe5d1");
-        $(".navbar-header .diamond").removeClass("hovered");
     });
     
     
@@ -258,12 +268,12 @@ $(document).ready(function () {
 			$("#mainContent, #mainNavbar").css("pointer-events", "auto");
 			/*$("#mainContent, #mainNavbar").removeClass('blur-in');
 			$("#mainContent, #mainNavbar").addClass('blur-out');*/
-            var id = $("h2").attr("id");
+            /*var id = $("h2").attr("id");
             if (id.length > 1) {
                 history.replaceState('data', '', 'http://L80.io/#' + id);
             } else {
                 history.replaceState('data', '', 'http://L80.io');
-            }
+            }*/
         }
     });
 });

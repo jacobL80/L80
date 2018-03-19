@@ -17,6 +17,12 @@ p, a, li {
     letter-spacing: 4px;
 }
 
+a:focus {
+    text-decoration: none;
+    color: #efe5d1;
+    opacity: .3;
+}
+
 
 
 /* Header styles */
@@ -30,9 +36,8 @@ h1 {
 	font-weight: 600;
     letter-spacing: 10px;
 	margin: 0 auto;
-    margin-left: 15px;
-	font-size: 2.5em;
-    padding-top: .5em;
+	font-size: 1.5em;
+    padding-top: 1em;
     float: left;
     transition: .2s ease;
 }
@@ -71,11 +76,10 @@ h1 {
 }
 
 #navbarLinks {
-    font-size: 1.4em;
+    font-size: 1em;
     font-weight: 600;
     margin-right: 0;
 	padding-left: 2em;
-    
 }
 
 #navbarLinks a {
@@ -102,13 +106,22 @@ h1 {
     pointer-events: none;
 }
 
-.navbarHr {
-    border-color: #008FA1;
-    background-color: #008FA1;
-    height: 3px;    
-    margin-top: 0;
-    margin-bottom: 0;
-    width: 98%; 
+.trianglePointer {
+    margin: auto;
+    opacity: 0;
+    margin-top: -1em;
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #efe5d1;
+    transition: .2s ease;
+}
+
+.viewable {
+    
+    border-bottom: 10px solid #E15427;
+    opacity: 1!important;
 }
 
 
@@ -122,33 +135,37 @@ h1 {
 	height: calc(100vh - 170px);
     top: 105px;
     position: relative;
-	/*overflow-y: auto;*/
 }
 
 .heroDiv {
     height: 300px;
-    display: flex;
+    width: 100%;
     padding-bottom: 50px;
 }
 
 .hero {
     position: relative;
     text-transform: uppercase;
-    font-weight: 500;
-    font-size: 1.4em;
+    font-weight: 100;
+    font-size: 1.2em;
     margin: auto;
     width: 700px;
     text-align: center;
-    line-height: 3em;
+    line-height: 2.5em;
 }
 
-h2 {
+.hero2 {
+	font-size: 2em;
+	padding-bottom: 1em;
+}
+
+/*h2 {
     text-align: center;
     font-weight: 1000;
     margin-top: 1em;
     margin-bottom: 1em;
     transition: .2s ease;
-}
+}*/
 
 .row {
     margin: 0;
@@ -168,6 +185,30 @@ h2 {
 
 .contentRowInner {
     padding-bottom: 5em;
+}
+
+.sort {
+	list-style-type: none;
+	display: flex;
+	padding-left: 0em;
+    margin-left: 0em; /* -1 to be aligned with title */
+    margin-right: auto;
+    margin-bottom: .5em;
+}
+
+.sort a {
+    height: 40px;
+	text-decoration: none;
+	display: inline-block;
+	padding-right: 1em;
+    padding-left: 1em;
+    transition: .2s ease;
+	cursor: pointer;
+	text-transform: uppercase;
+}
+
+.sort a:hover {
+    color: #efe5d1;
 }
  
 .buttonDiv {
@@ -252,37 +293,9 @@ h2 {
     opacity: 0;
 }
 
-.diamondRow {
-    display: flex;
-    width: 50%;
-    margin: auto;
-    height: 20px;
-}
-
-.diamondRowInner {
-    display: inherit;
-}
-
-.diamondContent {
-    display: block;
-    margin: 0;
-    margin-top: -1.1em;
-    margin-right: .85em;
-    position: relative;
-    border-width: 4px;
-    width: 25px;
-    height: 25px;
-}
-
-.diamondContentL {
-    margin-top: -1.25em;
-    width: 30px;
-    height: 30px;
-}
-
 .selected {
-    color: #FFF!important;
-    opacity: .5;
+    color: #E15427!important;
+    opacity: 1!important;
     pointer-events: none;
 }
 
@@ -293,6 +306,7 @@ h2 {
 .modalOverlay {
 	height: 100%;
 	width: 100%;
+	left: 0;
 	position: fixed;
 	display: none;
 	pointer-events: none;
@@ -302,7 +316,7 @@ h2 {
 }
 
 .modal {
-	position: absolute;
+	position: fixed;
 	overflow: hidden;
 	top: 10%;
 	right: 10%;
@@ -322,7 +336,6 @@ h2 {
 	position: absolute;
 	width: 1px;
 	height: 1px;
-	background-color: #04213E;
 	content: "";
 	bottom: 10px;
 	left: 50%;
@@ -335,7 +348,6 @@ h2 {
 .modal.active {
 	display: block;
 	visibility: visible;
-	transition: all 600ms;
 	transform: translateY(0px);
 	transition: all 0.5s;
 	box-shadow: 0 10px 10px 0 rgba(0,0,0,0.3), 0 10px 20px 0 rgba(0,0,0,0.28);
@@ -657,150 +669,6 @@ h3 {
     max-width: 1400px;
 }
 
-.resume {
-    max-width: 900px;
-}
-
-h4 {
-    font-size: 5em;
-    font-weight: 1000;
-    color: #EFE5D1; 
-}
-
-.resumeSubtitle {
-    font-size: 3.5em;
-}
-
-.resumeHr {
-    border: 3px solid #008D9F;
-    margin-top: 0;
-}
-
-.resumeLink {
-    color: #E15427;
-    transition: .2s ease;
-}
-
-.col-sm-8 {
-    padding-left: 0;
-}
-
-.pBar {
-    position: relative;    
-    height: auto;
-    width: 1.5em;  
-    background-color: #C8AA6F;
-    margin-left: 11px;
-    margin-right: 30px;
-}
-
-.pBar2 {
-    width: 6px;
-}
-
-.pBar3 {
-    width: 11px;
-}
-
-.pBar4 {
-    width: 12px;
-}
-
-.pBar5 {
-    width: 16px;
-}
-
-.resumeLink:hover {
-    color: #EFE5D1;
-    text-decoration: none;
-}
-
-.resumeQualText {
-    display: flex;
-}
-
-.diamondVr {
-    border-color: #C8AA6F;
-    transform: rotateX(0deg) rotateZ(45deg);
-    margin-top: 30px;
-    position: absolute;
-}
-
-.diamondVr2 {
-    margin-top: 70px;
-}
-
-.resumeText {
-    color: #A09777;
-    font-size: 1.3em;
-}
-
-h5 {
-    color: #C8AA6F;
-    font-weight: 1000;
-    font-size: 2em;
-}
-
-.resumeJob {
-    font-size: 1.3em;
-}
-
-.resumeEducation {
-    margin-bottom: 0;
-}
-
-.resumeExp {
-    margin-top: 2em;
-}
-
-/*#selfie, .aboutText {
-    width: 30em;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 0;
-}
-
-.aboutText {
-    color: #9f9677;
-    padding: 1em;
-}
-
-#name {
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
-.buttonImage {
-    border-width: 5px;
-}*/
-
-/*
-.resumeBtn {
-    width: 10em;
-    height: 3em;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    border-radius: 0;
-    background-color: #E15427;
-    border-width: 0;
-    transition: .2s ease;
-}
-
-.btn-primary:hover, .btn-primary.active, .btn-primary:active, .open>.dropdown-toggle.btn-primary, .btn-primary.focus, .btn-primary:focus {
-    color: #008FA1;
-    background-color: #FFF;
-    border-width: 0;
-}*/
-
-embed {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 3em;
-}
-
 
 
 
@@ -876,9 +744,5 @@ embed {
 
 /* IE only styles */
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    .diamondRow {
-        width: 100%;
-        justify-content: center;
-        padding-left: 1em;
-    }   
+
 }
