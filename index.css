@@ -66,7 +66,6 @@ h1 {
 	z-index: 10;
 	margin-bottom: 0;
     padding-top: 1em;
-    padding-bottom: 1em;
 }
 
 #navbar {
@@ -94,16 +93,6 @@ h1 {
     position: relative;
     cursor: pointer;
     transition: .2s ease;
-}
-
-.hovered {
-    background-color: #FFF;
-}
-
-.dSelected {
-    background-color: #FFF;
-    opacity: .5;
-    pointer-events: none;
 }
 
 .trianglePointer {
@@ -159,14 +148,6 @@ h1 {
 	padding-bottom: 1em;
 }
 
-/*h2 {
-    text-align: center;
-    font-weight: 1000;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    transition: .2s ease;
-}*/
-
 .row {
     margin: 0;
 }
@@ -184,6 +165,7 @@ h1 {
 }
 
 .contentRowInner {
+    height: auto;
     padding-bottom: 5em;
 }
 
@@ -213,42 +195,29 @@ h1 {
  
 .buttonDiv {
     cursor: pointer;
-    width: 48%;
-    height: auto;
+    /*width: 48%;*/ 
+    height: 455px;
     min-width: 15em;
-    margin: .5em;
+    margin: .8em;
     display: inline-block;
     position: relative;
     transition: .2s ease;
+    overflow: hidden;
 }
 
-.sectionButton {
-    color: #c7a96f;
-    font-size: 1em;
-    font-weight: 1000;
-    background-color: #04213E;
-    padding: 0 .5em;
-    overflow-wrap: break-word;
-    white-space: normal;
-    border-radius: 0!important;
-    height: 3em;
-    width: 100%;
-    border: 0px; 
+.small {
+    width: 35%;
 }
 
-.sectionButton:hover, .sectionButton:active, .sectionButton:focus, .sectionButton:visited {
-    background-color: #04213E;
-    border-width: 0px;
-    outline-width: 0;
-    color: #c7a96f;
+.large {
+    width: 60%;
+    /*height: 18.75%;*/
 }
 
 .buttonImage {
     width: 100%;
-    border-color: #008FA1;
-    border-width: 0px;
-    border-style: solid;
-    backface-visibility: hidden;
+    height: 100%;
+    object-fit: cover;
 }
 
 .overlay {
@@ -328,9 +297,11 @@ h1 {
 	transition: all 0.5s;
 	visibility: hidden;
 }
+
 .modal .modal-content {
 	opacity: 0;
 }
+
 .modal:before {
 	background-color: #04213E;
 	position: absolute;
@@ -345,6 +316,7 @@ h1 {
 	-webkit-transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
 	transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
+
 .modal.active {
 	display: block;
 	visibility: visible;
@@ -352,6 +324,7 @@ h1 {
 	transition: all 0.5s;
 	box-shadow: 0 10px 10px 0 rgba(0,0,0,0.3), 0 10px 20px 0 rgba(0,0,0,0.28);
 }
+
 .modal.active:before {
 	background-color: #04213E;
 	height: 2000px;
@@ -365,6 +338,7 @@ h1 {
 	-webkit-transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
 	transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
+
 .modal.active .modal-content {
 	position: relative;
 	z-index: 1;
@@ -381,6 +355,11 @@ h1 {
     padding: 20px;
 	width: 100%;
 	height: 100%;
+}
+
+.modal-text {
+    letter-spacing: 2px;
+    text-align: left;
 }
 
 .visible {
@@ -609,7 +588,7 @@ h1 {
     text-decoration: none;
     cursor: pointer;
 }
-
+tex
 
 
 
@@ -619,9 +598,17 @@ h1 {
 }
 
 .poster {
-    width: 100%;
+    width: auto;
     height: auto;
-    padding: 1em;
+    padding-bottom: 2em;
+    padding-top: 2em;
+}
+
+.text-right {
+    text-transform: uppercase;
+}
+.text-left {
+    padding-bottom: 2em!important;
 }
 
 .screenshot {
@@ -651,6 +638,10 @@ h3 {
     margin-top: .2em;
     font-weight: 1000;
 }
+
+.display {
+    height: 10em;
+}
   
 
 
@@ -667,6 +658,34 @@ h3 {
 .aboutContentInner {
     width: 100%;
     max-width: 1400px;
+}
+
+.aboutText {
+    text-align: center;
+}
+
+.aboutImg {
+    width: 700px;
+    padding-bottom: 2em;
+}
+
+.hero3 {
+    letter-spacing: 2px;
+    font-size: 1.4em;
+    text-transform: none;
+    line-height: 1.5em;
+    margin-bottom: 2.5em;
+    text-align: left;
+}
+
+.hero4 {
+    text-align: left;
+    padding-bottom: .5em;
+}
+
+.interests {
+    padding-bottom: 5em;
+    width: 700px;
 }
 
 
@@ -719,27 +738,91 @@ h3 {
 
 /* Responsive design styles */
 @media (max-width: 800px) {
+    /* header styles */
+    .nav>li {
+        display: inline-block;
+    }
     
     #mainNavbar {
+        padding-top: 0px;
+        height: 7.5em;
         line-height: 5px; 
     }
     
-    .navbar-header h1 {
-        margin-left: 10%;
+    h1 {
+        width: 100%;
+        text-align: center;
     }
     
-    h2 {
-        margin-top: 15px;
-        margin-bottom: 10px;
+    #navbarLinks {
+        padding-left: 0px;
+        text-align: center;
     }
     
-    .contentRowOuter {
-        margin-bottom: 3em;
+    .trianglePointer {
+        margin-top: .4em;
+    }
+
+    
+    
+    
+    /* main content styles */
+    .sort {
+        padding-top: 2em;
     }
     
-    .buttonDiv {
-        margin-bottom: 1em;
-    }    
+    .buttonDiv, .large, .small {
+        width: auto;
+        height: auto;
+    }
+    
+    .buttonImage {
+        opacity: .4;
+    }
+    
+    .text {
+        color: rgba(255,255,255,1)!important;
+    }
+    
+    .overlayHr {
+        opacity: 1!important;
+        margin-top: .5em;
+        margin-bottom: .5em;
+    }
+    
+    .modal {
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+    
+    .modalHr {
+        width: auto;
+    }
+    
+    .close {
+        top: 0;
+        right: 0;
+    }
+    
+    
+    
+    
+    /* about styles */
+    .aboutImg {
+        width: 100%;
+    }
+
+    .hero {
+        width: 100%;
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+
+    .interests {
+        width: 100%;
+    }
 }
 
 /* IE only styles */

@@ -1,5 +1,5 @@
-//var baseURL = 'http://l80.io/assets/frontpage.json';
-var baseURL = 'https://api.myjson.com/bins/gugs1'; // For testing
+var baseURL = 'http://l80.io/assets/frontpage.json';
+//var baseURL = 'https://api.myjson.com/bins/gugs1'; // For testing
 var numberOfEntries = 6;
 
 $(document).ready(function () {
@@ -8,13 +8,21 @@ $(document).ready(function () {
     // Loads JSON file info into featured entries boxes on Front Page
     $.getJSON(baseURL, function(data) {
         var entryCounter = 0;
+        var divType = "";
         $.each(data.entries, function(i, option) {
             var entryId = option.entryId;
             if (entryCounter < numberOfEntries) {
-                $('<div class="buttonDiv" id="' + entryId + '" type="' + option.entryType + '"><img src="assets/tiles/' + option.imgSource + '.png" class="img-responsive buttonImage" parentId="' + entryId + '"/><div class="overlay" parentId="' + entryId + '"><div class="text"> <span class="title ' + entryId + '">' + option.entryName + '</span><br><span class="date">' + option.releaseDate + '</span><hr class="overlayHr">' + option.overlay + '</div></div></div>').appendTo('.contentRowInner');
+                if ((entryCounter % 4) === 0 || (entryCounter % 4) === 3) {
+                    divType = "large";
+                } else {
+                    divType = "small";
+                }
+                $('<div class="buttonDiv ' + divType + '" id="' + entryId + '" type="' + option.entryType + '"><img src="assets/tiles/' + option.imgSource + '.png" class="img-responsive buttonImage" parentId="' + entryId + '"/><div class="overlay" parentId="' + entryId + '"><div class="text"> <span class="title ' + entryId + '">' + option.entryName + '</span><br><span class="date">' + option.releaseDate + '</span><hr class="overlayHr">' + option.overlay + '</div></div></div>').appendTo('.contentRowInner');
                 $('<div modalNum="' + entryId + '" id="modal' + entryId + '" class="modal"><div class="container modal-content"><div class="row modalRow text-center" style="height:7%"><span class="close">&times;</span><p class="col-sm-12 modalText">' + option.entryName + '</p></div><div class="row modalRow" style="height:93%"><div class="modalBlock" id="modalBlock' + entryId + '"></div></div></div></div>').appendTo('body');
             } else {
-                $('<div class="buttonDiv hidden" id="' + entryId + '" type="' + option.entryType + '"><img src="assets/tiles/' + option.imgSource + '.png" class="img-responsive buttonImage" parentId="' + entryId + '"/><div class="overlay" parentId="' + entryId + '"><div class="text"> <span class="title ' + entryId + '">' + option.entryName + '</span><br><span class="date">' + option.releaseDate + '</span><hr class="overlayHr">' + option.overlay + '</div></div> </div><div modalNum="' + entryId + '" id="modal' + entryId + '" class="modal"><div class="container modal-content"><div class="row modalRow text-center" style="height:7%"><span class="close">&times;</span><p class="col-sm-12 modalText">' + option.entryName + '</p></div><div class="row modalRow" style="height:93%"><div class="modalBlock" id="modalBlock' + entryId + '"></div></div></div></div>').appendTo('.contentRowInner');
+                $('<div class="buttonDiv ' + divType + ' hidden" id="' + entryId + '" type="' + option.entryType + '"><img src="assets/tiles/' + option.imgSource + '.png" class="img-responsive buttonImage" parentId="' + entryId + '"/><div class="overlay" parentId="' + entryId + '"><div class="text"> <span class="title ' + entryId + '">' + option.entryName + '</span><br><span class="date">' + option.releaseDate + '</span><hr class="overlayHr">' + option.overlay + '</div></div> </div>').appendTo('.contentRowInner');   
+                
+                $('<div modalNum="' + entryId + '" id="modal' + entryId + '" class="modal"><div class="container modal-content"><div class="row modalRow text-center" style="height:7%"><span class="close">&times;</span><p class="col-sm-12 modalText">' + option.entryName + '</p></div><div class="row modalRow" style="height:93%"><div class="modalBlock" id="modalBlock' + entryId + '"></div></div></div></div>').appendTo('body');
             }
             entryCounter++;
         });
@@ -34,17 +42,16 @@ $(document).ready(function () {
             } else {
                 //Threads out edge cases where user is abusing URL
                 if (hash === "ux" || hash === "graphic" || hash === "about") { 
-                    $(".navbarLinks").removeClass("selected");
+                    if (hash === "about") {
+                        $(".navbarLinks").removeClass("selected");
+                    } else {
+                        $(".sortLinks").removeClass("selected");
+                    }
 					$("a[id='" + hash + "']").addClass("selected");
                 }
-                if (hash === "ux") {
+                if (hash === "ux" || hash === "graphic") {
                     $(".contentRowOuter").addClass("hidden");
-                    $(".navbarLinks1").trigger("click", function() {
-                        $(".contentRowOuter").removeClass("hidden");
-                    });
-                } else if (hash === "graphic") {
-                    $(".contentRowOuter").addClass("hidden");
-                    $(".navbarLinks2").trigger("click", function () {
+                    $("a[id='" + hash + "']").trigger("click", function() {
                         $(".contentRowOuter").removeClass("hidden");
                     });
                 } else if (hash === "about") {
@@ -91,6 +98,13 @@ $(document).ready(function () {
 
                     var entryCounter = 0;
                     $(".buttonDiv").each(function() {
+                        if ((entryCounter % 4) === 0 || (entryCounter % 4) === 3) {
+                            $(this).removeClass("small");
+                            $(this).addClass("large");
+                        } else {
+                            $(this).removeClass("large");
+                            $(this).addClass("small");
+                        }
                         entryCounter++;
                         if (entryCounter > numberOfEntries) {
                             $(this).addClass("hidden");
@@ -109,7 +123,6 @@ $(document).ready(function () {
         e.preventDefault(); 
        
         var id = $(this).attr("id");
-        //var links = $(this).attr("list");
         
         // Adds the sliding and fading effect
         $(".contentRowOuter, .aboutContentOuter")
@@ -117,10 +130,8 @@ $(document).ready(function () {
             .animate({ paddingTop: '5%', opacity: 0 }, 500, function() {
                 $(".navbarLinks").removeClass("selected");
                 $(".worksTriangle").removeClass("viewable");
-                //$(".links").children(".diamond").removeClass("dSelected");
                 $("a[id='" + id + "']").addClass("selected");
                 $("." + id + "Triangle").addClass("viewable");
-                //$("." + links).children(".diamond").addClass("dSelected");
                 $(".buttonDiv").addClass("hidden");
                 $(".contentRowOuter").removeClass("hidden");
                 $(".aboutContentOuter").addClass("hidden");
@@ -146,7 +157,7 @@ $(document).ready(function () {
         var id = $(this).attr("id");
         
         // Adds the sliding and fading effect
-        if (id === "ux" || id === "graphic" /*|| id === "new"*/) {
+        if (id === "ux" || id === "graphic") {
             $(".contentRowInner")
                 .css('opacity', 1)
                 .animate({ paddingTop: '5%', opacity: 0 }, 500, function() {
@@ -160,6 +171,21 @@ $(document).ready(function () {
                     history.replaceState('data', '', 'http://L80.io/#' + id);
                     $(".buttonDiv[type='" + id + "']").removeClass("hidden");
                     
+                    var entryCounter = 0;
+                    var entrySize = $("div[type='" + id + "']").length;
+                    $("div[type='" + id + "']").each(function() {
+                        if ((entryCounter % 4) === 0 || (entryCounter % 4) === 3) {
+                            $(this).removeClass("small");
+                            $(this).addClass("large");
+                        } else {
+                            $(this).removeClass("large");
+                            $(this).addClass("small");
+                        }
+                        entryCounter++;
+                        if (entryCounter === entrySize && entryCounter % 2 === 1) {
+                            console.log("final entry");
+                        }
+                    });
             });
             
             //Fades back in when complete
@@ -250,13 +276,14 @@ $(document).ready(function () {
 		$("#mainContent, #mainNavbar").css("pointer-events", "auto");
 		/*$("#mainContent, #mainNavbar").removeClass('blur-in');
 		$("#mainContent, #mainNavbar").addClass('blur-out');*/
-        id = 0;
+        history.replaceState('data', '', 'http://L80.io');
+        /*id = 0;
         var id2 = $("h2").attr("id");
         if (id2.length > 1) {
             history.replaceState('data', '', 'http://L80.io/#' + id2);
         } else {
             history.replaceState('data', '', 'http://L80.io');
-        }
+        }*/
     });
 
     // When the user clicks anywhere outside of the modal, close it
@@ -266,6 +293,7 @@ $(document).ready(function () {
             $("body").find(".modal").removeClass('active');
             $(".modalOverlay").fadeOut(500);
 			$("#mainContent, #mainNavbar").css("pointer-events", "auto");
+            history.replaceState('data', '', 'http://L80.io');
 			/*$("#mainContent, #mainNavbar").removeClass('blur-in');
 			$("#mainContent, #mainNavbar").addClass('blur-out');*/
             /*var id = $("h2").attr("id");

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <link rel="shortcut icon" href="assets/diamond-01.png" />
+    <link rel="shortcut icon" href="assets/80.png" />
 
     <!-- CSS and fonts -->
 	<link rel="stylesheet" href="https://use.typekit.net/cxa2soa.css">
@@ -28,16 +28,11 @@
 	<div class="modalOverlay">
 	</div>
     <nav class="navbar navbar-default navbar-fixed-top shadow" id="mainNavbar">
-        <div id="navbar" class="navbar-collapse collapse">
+        <div id="navbar" class="navbar">
             <a class="navbar-header" id="navbarHeader">
                 <h1 parentId="navbarHeader">Jacob Leighty</h1>
             </a>
             <ul class="nav navbar-nav navbar-right" id="navbarLinks">
-                <!--<li class="active"><a href="#">Link<span class="sr-only">(current)</span></a></li>-->
-                <!--<li class="links links1"><div class="diamond diamondNav"></div><a class="navbarLinks navbarLinks1" id="ux" list="links1">Ux/Coding</a></li>
-                <li class="links links2"><div class="diamond diamondNav diamondNav2"></div><a class="navbarLinks navbarLinks2" id="graphic" list="links2">Graphic Design</a></li>
-                <li class="links links3"><div class="diamond diamondNav diamondNav3"></div><a class="navbarLinks navbarLinks3" id="comics" list="links3">Personal Site</a></li>
-                <li class="links links4"><div class="diamond diamondNav diamondNav4"></div><a class="navbarLinks navbarLinks4" id="about" list="links4">About</a></li>-->
                 <li class="navLinks"><a class="navbarLinks selected" id="works">Works</a><div class="trianglePointer worksTriangle viewable"></div></li>
                 <li class="navLinks"><a class="navbarLinks" id="about">About</a><div class="trianglePointer aboutTriangle"></div></li>
                 <li class="navLinks"><a class="navbarLinks" id="resume" href="assets/Resume v5.pdf" target="_blank">Resume</a><div class="trianglePointer resumeTriangle"></div></li>
@@ -66,163 +61,11 @@
         
         <div class="row aboutContentOuter hidden">
             <div class="row aboutContentInner">
-                <!--
-                <div class="container-fluid resume">
-                    <div class="row">
-                        <div class="col-sm-3">
-                        <img src="assets/Resume_assets-01.png" class="img-responsive resumeIcon">
-                        </div>
-                        <div class="col=sm-9">
-                            <h4>Jacob Leighty</h4>
-                            <hr class="resumeHr">-->
-                            <p class="resumeText text-left">My name is Jacob, and I'm a 
-                                <!-- I will not change this number more than once. Harumph. -->
-                                <script type ="text/javascript">
-                                    var age = _calcAge();
-                                    function _calcAge() {
-                                        var date = new Date(1994,06,13,0,0,0);
-                                        var today = new Date();
-
-                                        var timeDiff = Math.abs(today.getTime() - date.getTime());
-                                        var age = Math.ceil(timeDiff / (1000 * 3600 * 24)) / 365;
-                                        return age;
-                                    }
-                                    document.write(Math.floor(age));
-                                </script> 
-                            year old designer from Auburn, Washington. In my free time, I enjoy listening to music (both at home and live), playing competitive video games, playing tennis and badminton, and going on long walks.</p><br><!--
-                        </div>
-                    </div>
-                    <hr class="resumeHr">
-
-                    <!-- Contact Me --><!--
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <h5 class="text-center">Contact Information</h5>
-                            
-                            <div class="resumeContactInfo">
-                                <p class="resumeText text-center">Auburn, WA 98092  •  <a class="resumeLink" href="tel:2538806289" target="_top">(253) 880 - 6289</a> • <a class="resumeLink" href="mailto:jacob.leighty@gmail.com?Subject=Via%20portfolio" target="_top">jacob.leighty@gmail.com</a></p>
-                                <p class="resumeText text-center"><a class="resumeLink" href="http://L80.io" target="_top">Portfolio: L80.io</a>  •  <a class="resumeLink" href="linkedin.com/in/jacob-leighty" target="_top">LinkedIn Profile</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <hr class="resumeHr">
-                    
-                    <!-- Qualifications --><!--
-                    <div class="row">
-                        <div class="col-sm-8 text-left">
-                            <h4 class="resumeSubtitle">Qualifications</h4>
-                            <div class="resumeQualText">
-                                <div class="pBar"></div>
-                                <div class="diamond diamondVr"></div>
-                                <p class="resumeText">Creative and analytical designer with related experience and education to be a key contributing member in application and product development, ensuring timeliness and end user satisfaction. </p>
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                        <img src="assets/Resume_assets-05.png" class="img-responsive resumeGraphic">
-                        </div>
-                    </div>
-                    <br>
-                    <hr class="resumeHr">
-
-                    <!-- Education --><!--
-                    <div class="row">
-                        <div class="col-sm-12 text-left">
-                            <h4 class="resumeSubtitle">Education</h4>
-                            <div class="resumeQualText">
-                                <div class="pBar pBar2"></div>
-                                <div class="diamond diamondVr"></div>
-                                <div style="padding-top:1em">
-                                    <p class="resumeJob resumeEducation"><strong>Bachelor of Science in Informatics, UX/UI Design track </strong></p>
-                                    <p class="resumeText">University of Washington, Seattle, WA  •  Dean’s List</p>
-                                </div>
-                            </div>
-                            <div class="resumeQualText">
-                                <div class="pBar pBar3"></div>
-                                <div class="diamond diamondVr"></div>
-                                <div style="padding-top:1em">
-                                    <p class="resumeJob resumeEducation"><strong>Coursework:</strong></p>
-                                    <p class="resumeText">Visual Information Design, Value Sensitive Design, Design Thinking, UX & Info Architecture, Info Systems Analysis/Design, Research Methods, Client-Side Web Dev, Android Dev</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <hr class="resumeHr">
-
-                    <!-- Experience --><!--
-                    <h4 class="resumeSubtitle text-left">Experience</h4>
-                    <div class="row">
-                        <div class="col-sm-3">
-                        <img src="assets/Resume_assets-02.png" class="img-responsive resumeExp">
-                        </div>
-                        <div class="col-sm-9 text-left">
-                            <h5>T-Mobile (Factoria, WA)</h5>
-                            <p class="resumeJob"><strong>UX Designer/Front End Developer,</strong><i> 7/2017 – Present</i></p>
-                            <div class="resumeQualText">
-                                <div class="pBar pBar4"></div>
-                                <div class="diamond diamondVr diamondVr2"></div>
-                                <p class="resumeText">Work as designer for a team of engineers, creating mock-ups and redesigning old internal applications.<br>
-                                   &bull; Creates visual mock-ups and wireframes for web applications.<br>
-                                   &bull; Works with a constantly changing and diverse team of engineers, designers,
-                                   and programmers to create new applications.<br>
-                                   &bull; Implements highly interactive and responsive web pages based on designs that 
-                                   conform to both team and T-Mobile branding guidelines.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-9 text-left">
-                            <h5>Washington Gaming Association (Seattle, WA)</h5>
-                            <p class="resumeJob"><strong>Lead Graphic Designer,</strong> <i>10/2015 – 6/2016</i></p>
-                            <div class="resumeQualText">
-                                <div class="pBar pBar5"></div>
-                                <div class="diamond diamondVr diamondVr2"></div>
-                                <p class="resumeText">Led Branding Team for non-profit organization at UW, aiding all teams with creation of visual assets. Spearheaded process for defining and laying out branding guidelines for future projects. <br>
-                                   &bull; Developed and maintained excellent working relationship across teams by
-                                   clearly communicating team progress on new assets regularly.<br>
-                                   &bull; Collaborated on several passion projects outside of regular duties, including
-                                   educational presentations and helping form self-improvement programs for 
-                                   club members. 
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                        <img src="assets/Resume_assets-03.png" class="img-responsive resumeExp">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-3">
-                        <img src="assets/Resume_assets-04.png" class="img-responsive resumeExp">
-                        </div>
-                        <div class="col-sm-9 text-left">
-                            <h5>SPSInteractive (Seattle, WA)</h5>
-                            <p class="resumeJob"><strong>UX Designer (Capstone Project),</strong> <i>1/2016 – 6/2016</i></p>
-                            <div class="resumeQualText">
-                                <div class="pBar pBar4"></div>
-                                <div class="diamond diamondVr diamondVr2"></div>
-                                <p class="resumeText">Key member in small team sponsored by Microsoft’s Technology and Civic Engagement Department. Driving force behind design choices and product branding, and leader in team communications. <br>
-                                   &bull; Shaped project development through design ideation, wireframes, usability 
-                                   testing, and brand design.<br>
-                                   &bull; Collaborated with teammates to create visual sales pitch for product,
-                                   earning the team the “Social Impact Award” at UW’s 2016 Capstone Night.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                </div>
-                    <!--<div class="buttonDiv" id="selfie">
-                        <img src="assets/me.jpg" class="img-responsive buttonImage"/>
-                        <div class="diamondRow">
-                            <img src="assets/diamond-07.png" class="img-responsive diamonds diamonds2"/>
-                        </div>
-                        <p align="center" id="name">Jacob Leighty</p>
-                    </div>
-
-                    <p class="aboutText">My name is Jacob. I am a 
-                    <!-- I will not change this number more than once. Harumph. --><!--
+                <div class="aboutText">
+                    <p class="hero hero2 hero4">Hey! I'm Jacob.</p> 
+                    <img class="aboutImg" src="assets/me.png">
+                    <p class="hero hero3">I'm a 
+                    <!-- I will not change this number more than once. Harumph. -->
                     <script type ="text/javascript">
                         var age = _calcAge();
                         function _calcAge() {
@@ -235,17 +78,21 @@
                         }
                         document.write(Math.floor(age));
                     </script> 
-                    year old UX/Graphic Designer from Auburn, Washington. <br><br>I attended the University of Washington, where I graduated with a Bachelor of Science in Informatics in 2016.<br><br>You can reach via <a href="mailto:jacob.leighty@gmail.com?Subject=Via%20portfolio" target="_top">email.</a><br><br><br>
-                    </p>
-
+                    year old User Experience and Graphic Designer, currently living in Seattle, WA. I graduated from the University of Washington in 2016, where I studied Informatics. Design has been always been my passion for as long as I can remember, and I always strive to push myself to even greater heights with it. I love being able to tackle a creative problem and coming up with intuitive and outside-the-box solutions.</p>
+                    <p class="hero hero3">Outside of design, I have a number of other hobbies, as well! I love to collect music and go to concerts, play competitive video games, and go on 10+ mile walks.</p><br>      
                 </div>
-                <div class="col-md-6 resumeRow">
-                    <div class="resume">
-                        <embed src="assets/Resume.pdf" width="90%" height="700" type="application/pdf">
-                    </div>-->
-                </div> 
+                <!--
+                <div class="row interests">
+                    <div class="col-md-4">
+                    </div>
+                    <div class="col-md-4">
+                    </div>
+                    <div class="col-md-4">
+                    </div>
+                </div>-->
             </div> 
-    </div> 
+        </div> 
+    </div>
     
     <footer class="footer navbar-fixed-bottom">
 		<div class="contactInfo">
