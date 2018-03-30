@@ -218,6 +218,7 @@ h1 {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: .2s ease;
 }
 
 .overlay {
@@ -360,6 +361,9 @@ h1 {
 .modal-text {
     letter-spacing: 2px;
     text-align: left;
+    padding-bottom: 2em;
+    font-size: 1.15em;
+    line-height: 2em;
 }
 
 .visible {
@@ -588,7 +592,8 @@ h1 {
     text-decoration: none;
     cursor: pointer;
 }
-tex
+
+
 
 
 
@@ -597,18 +602,25 @@ tex
     height: 100%;
 }
 
-.poster {
+.leader {
     width: auto;
     height: auto;
     padding-bottom: 2em;
-    padding-top: 2em;
+    margin-top: -1.5em;
+}
+
+.poster {
+    width: 350px;
+    height: 250px;
+    padding-bottom: 2em;
+    object-fit: cover;
 }
 
 .text-right {
     text-transform: uppercase;
 }
 .text-left {
-    padding-bottom: 2em!important;
+    padding-bottom: 1.5em!important;
 }
 
 .screenshot {
@@ -619,8 +631,8 @@ tex
 .modalHr {
     border-color: #008D9F;
     border-width: 5px;
-    margin-top: 15px;
-    margin-bottom: 25px;
+    margin-top: 3em;
+    margin-bottom: 4em;
     width: 50%;
     width: 30em;
     margin-left: auto;
@@ -637,10 +649,44 @@ tex
 h3 {
     margin-top: .2em;
     font-weight: 1000;
+    margin-bottom: 2.5em;
 }
 
-.display {
-    height: 10em;
+h4 {
+    font-weight: 1000;
+    padding-bottom: 1em;
+    margin-bottom: 0;
+}
+
+.modalTip {
+    font-size: .7em;
+    font-style: italic;
+    font-weight: 100;
+    margin-bottom: 2.5em;
+    line-height: 1.8em;
+    text-align: center;
+}
+
+.teaser {
+	width: auto;
+	height: auto;
+	padding-bottom: 1em;
+    margin: auto;
+}
+
+.modalTeaser {
+	padding-top: 3.5em;
+}
+
+.modalLink {
+    font-weight: 1000;
+    color: white;
+    text-decoration: underline;
+    transition: .2s ease;
+}
+
+.modalLink:hover {
+    color: #E15427;
 }
   
 
@@ -712,11 +758,11 @@ h3 {
     list-style: none;
     padding-top: 1.5em;
     padding-bottom: 1em;
+    padding-left: 0;
     text-transform: uppercase;
 }
 
 .footerContact { 
-    margin-right: 1.5em;
     transition: .2s ease;
     font-weight: 600;
 }
@@ -725,6 +771,11 @@ h3 {
     color: #E15427;
     text-decoration: none;
     cursor: pointer;
+}
+
+.footerSlash {
+    margin-left: 1.5em;
+    margin-right: 1.5em;
 }
 
 .footerSlash:hover {
@@ -768,7 +819,7 @@ h3 {
     
     /* main content styles */
     .sort {
-        padding-top: 2em;
+        padding-top: 5em;
     }
     
     .buttonDiv, .large, .small {
@@ -782,6 +833,7 @@ h3 {
     
     .text {
         color: rgba(255,255,255,1)!important;
+        font-size: 100%;
     }
     
     .overlayHr {
@@ -797,6 +849,19 @@ h3 {
         left: 0;
     }
     
+    .modal-content {
+        padding: .5em;
+        padding-bottom: 1.5em;
+    }
+    
+    .modalTitle {
+        height: auto!important;
+    }
+    
+    .modalBody {
+        height: 89%!important;
+    }
+    
     .modalHr {
         width: auto;
     }
@@ -804,6 +869,15 @@ h3 {
     .close {
         top: 0;
         right: 0;
+    }
+    
+    .text-left, .text-right {
+        text-align: center;
+        margin: 0!important;
+    }
+    
+    h4 {
+        padding-top: 1.5em;
     }
     
     
@@ -822,6 +896,14 @@ h3 {
 
     .interests {
         width: 100%;
+    }
+    
+    
+    
+    
+    /* footer styles */
+    .aboutContact {
+        font-size: .7em;
     }
 }
 

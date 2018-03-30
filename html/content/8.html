@@ -14,7 +14,7 @@
     </div>
     <div class="row">
         <div class="col-sm-12" align="center">
-            <img src="assets/tiles/eiaquantum.png" class="img-responsive poster">
+            <img src="assets/tiles/eiaquantum.png" class="img-responsive leader">
         </div>
     </div>
     <div>
@@ -26,55 +26,106 @@
 <div class="container-fluid">
     <div class="row text-center">
         <h3>Problem Statement</h3>
-        <div class="col-md-8 col-md-offset-2 modal-text">WIP </div>
+        <div class="col-md-8 col-md-offset-2 modal-text">The purpose of this project is to create a template for the T-Mobile internal team "EIA" to make their own website/portal to house all of their projects and information. </div>
     </div>
     <div>
         <hr class="modalHr">
     </div>
 
     <div class="row text-center">
-        <h3>Goal</h3>
-        <div class="col-md-8 col-md-offset-2 modal-text">WIP </div>
-    </div>
-    <div>
-        <hr class="modalHr">
-    </div>
-    
-    <div class="row text-center">
-        <h3>Ideation</h3>
-        <div class="col-md-8 col-md-offset-2 modal-text">WIP </div>
-    </div>
-    <div>
-        <hr class="modalHr">
-    </div>
-    
-    <div class="row text-center">
-        <h3>Solution</h3>
-        <div class="col-md-8 col-md-offset-2 modal-text">WIP </div>
-    </div>
-    <div>
-        <hr class="modalHr">
-    </div>
-    
-    <div class="row text-center">
-        <h3>Final Implementation</h3>
-        <div class="col-md-8 col-md-offset-2 modal-text">WIP </div>
-    </div>
-    <div>
-        <hr class="modalHr">
-    </div>
-
-    <!--
-    <div class="row">
-        <div class="text-justify col-sm-4"> Click here to select this<strong> column.</strong> Always place your content within a column. Columns are indicated by a dashed blue line. </div>
-        <div class="col-sm-4 text-justify"> You can <strong>resize a column</strong> using the handle on the right. Drag it to increase or reduce the number of columns.</div>
-        <div class="col-sm-4 text-justify"> You can <strong>offset a column</strong> using the handle on the left. Drag it to increase or reduce the offset. </div>
-    </div>
-    <hr>
-    <div class="row">
-        <div class="text-center col-md-12">
-            <div class="well"><strong> Easily build your page using the Bootstrap components from the Insert panel.</strong></div>
+        <h3>Goals</h3>
+        <div class="col-md-8 col-md-offset-2 modal-text">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Responsive</h4>
+                    The clients for this template requested responsiveness, so it should not only be smooth in its transitions, but also seamlessly transition to a mobile version as needed.
+                </div>
+                <div class="col-md-6">
+                    <h4>Simple</h4>
+                    This webpage is meant for viewing by a variety of people, so it should not be too complex to navigate.
+                </div>
+            </div>
+            
+            <div class="row" style="margin-top:2em">
+                <div class="col-md-6">
+                    <h4>Easy to Edit</h4>
+                    Since the requested product is only a template, it should be designed in such a way as to be fairly easy for someone else to pick up and make edits and additions.
+                </div>
+                <div class="col-md-6">
+                    <h4>Expandable</h4>
+                    The scope of this website is unclear, so it should be programmed in such a way so as to not box in its design and be easily expanded should more pages be needed in the future.
+                </div>
+            </div>
         </div>
     </div>
-    -->
+    <div>
+        <hr class="modalHr">
+    </div>
+    
+    <div class="row text-center">
+        <h3>Initial Implementation</h3>
+        <div class="col-md-8 col-md-offset-2 modal-text">Initially, I created a webpage from scratch that would serve as a template for the EIA team to edit and maintain. </div>
+        <div class="col-md-8 col-md-offset-2 modal-text">
+            <div class="modalTip">Click images to view full versions in a new tab.</div>
+            <div class="row">
+                <div class="col-sm-6" align="center">
+                    <a href="assets/8_1.png" target="_blank">
+                        <img src="assets/8_1.png" class="img-responsive poster">
+                    </a>
+                </div>
+                <div class="col-sm-6" align="center">
+                    <a href="assets/8_2.png" target="_blank">
+                        <img src="assets/8_2.png" class="img-responsive poster" >
+                    </a>
+                </div>
+                <div class="col-sm-6" align="center">
+                    <a href="assets/8_3.png" target="_blank">
+                        <img src="assets/8_3.png" class="img-responsive poster" >
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2 modal-text">It became clear as production continued, however, that the webpage was likely going to be run by somebody with little to no programming experience, which led to a new design challenge: how can I create a template website that is user agnostic? Having a pure HTML solution was no longer feasible, so the design needed to be completely changed to reflect that.</div>
+    </div>
+    <div>
+        <hr class="modalHr">
+    </div>
+    
+    <div class="row text-center">
+        <h3>Solutions</h3>
+        <div class="col-md-8 col-md-offset-2 modal-text">
+			<div class="row">
+                <div class="col-sm-6">
+					<h4>Confluence</h4>
+					The solution I came upon to solve the usability issue of this template was to reconstruct a simplified version of it in Confluence, T-Mobile's local page creation tool. Confluence is normally meant only for Wiki-style pages, but with a bit of creative CSS and JavaScript usage, I was able to work around that limitation and turn it into a rudimentary website editor. The limitations of the tool meant some design choices had to be simplified a bit in order to be maintained in the new version, but otherwise meant that even a non-tech savvy user would be able to edit the webpage without much issue.
+                </div>
+                <div class="col-sm-6 modalTeaser">
+					<img src="assets/8_4.jpg" class="img-responsive teaser">
+					<div class="modalTip">A simplified template.</div>
+                </div>
+            </div>
+		</div>
+    </div>
+    <div>
+        <hr class="modalHr">
+    </div>
+    
+    <div class="row text-center">
+        <h3>Final Template Design</h3>
+        <div class="col-md-8 col-md-offset-2 modal-text">
+            <div class="modalTip">Click images to view full versions in a new tab.</div>
+            <div class="row">
+                <div class="col-sm-6" align="center">
+                    <a href="assets/8_4.jpg" target="_blank">
+                        <img src="assets/8_4.jpg" class="img-responsive poster">
+                    </a>
+                </div>
+                <div class="col-sm-6" align="center">
+                    <a href="assets/8_5.png" target="_blank">
+                        <img src="assets/8_5.png" class="img-responsive poster" >
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

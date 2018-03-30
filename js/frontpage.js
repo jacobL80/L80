@@ -18,11 +18,11 @@ $(document).ready(function () {
                     divType = "small";
                 }
                 $('<div class="buttonDiv ' + divType + '" id="' + entryId + '" type="' + option.entryType + '"><img src="assets/tiles/' + option.imgSource + '.png" class="img-responsive buttonImage" parentId="' + entryId + '"/><div class="overlay" parentId="' + entryId + '"><div class="text"> <span class="title ' + entryId + '">' + option.entryName + '</span><br><span class="date">' + option.releaseDate + '</span><hr class="overlayHr">' + option.overlay + '</div></div></div>').appendTo('.contentRowInner');
-                $('<div modalNum="' + entryId + '" id="modal' + entryId + '" class="modal"><div class="container modal-content"><div class="row modalRow text-center" style="height:7%"><span class="close">&times;</span><p class="col-sm-12 modalText">' + option.entryName + '</p></div><div class="row modalRow" style="height:93%"><div class="modalBlock" id="modalBlock' + entryId + '"></div></div></div></div>').appendTo('body');
+                $('<div modalNum="' + entryId + '" id="modal' + entryId + '" class="modal"><div class="container modal-content"><div class="row modalRow modalTitle text-center" style="height:7%"><span class="close">&times;</span><p class="col-sm-12 modalText">' + option.entryName + '</p></div><div class="row modalRow modalBody" style="height:93%"><div class="modalBlock" id="modalBlock' + entryId + '"></div></div></div></div>').appendTo('body');
             } else {
                 $('<div class="buttonDiv ' + divType + ' hidden" id="' + entryId + '" type="' + option.entryType + '"><img src="assets/tiles/' + option.imgSource + '.png" class="img-responsive buttonImage" parentId="' + entryId + '"/><div class="overlay" parentId="' + entryId + '"><div class="text"> <span class="title ' + entryId + '">' + option.entryName + '</span><br><span class="date">' + option.releaseDate + '</span><hr class="overlayHr">' + option.overlay + '</div></div> </div>').appendTo('.contentRowInner');   
                 
-                $('<div modalNum="' + entryId + '" id="modal' + entryId + '" class="modal"><div class="container modal-content"><div class="row modalRow text-center" style="height:7%"><span class="close">&times;</span><p class="col-sm-12 modalText">' + option.entryName + '</p></div><div class="row modalRow" style="height:93%"><div class="modalBlock" id="modalBlock' + entryId + '"></div></div></div></div>').appendTo('body');
+                $('<div modalNum="' + entryId + '" id="modal' + entryId + '" class="modal"><div class="container modal-content"><div class="row modalRow modalTitle text-center" style="height:7%"><span class="close">&times;</span><p class="col-sm-12 modalText">' + option.entryName + '</p></div><div class="row modalRow modalBody" style="height:93%"><div class="modalBlock" id="modalBlock' + entryId + '"></div></div></div></div>').appendTo('body');
             }
             entryCounter++;
         });
@@ -200,6 +200,7 @@ $(document).ready(function () {
         e.preventDefault(); 
         var id = $(this).attr("id");
         $("img[parentId='" + id + "']").css("background", "rgba(5,36,64,.8)");
+        $("img[parentId='" + id + "']").css("transform", "scale(1.2)");
         $("div[parentId='" + id + "']").css("background", "rgba(5,36,64,.8)");
         $("div[parentId='" + id + "'] .text").css("color", "rgba(255,255,255,1)");
         $("div[parentId='" + id + "'] .overlayHr").css("opacity", "1");
@@ -207,8 +208,9 @@ $(document).ready(function () {
     
     $(document).on("mouseout", ".buttonDiv", function(e) {
         e.preventDefault(); 
-        var id = $(this).attr("id");
-        $("img[parentId='" + id + "']").css("background", "rgba(5,36,64,1)");
+        var id = $(this).attr("id"); 
+        $("img[parentId='" + id + "']").css("background", "rgba(5,36,64,.8)");
+        $("img[parentId='" + id + "']").css("transform", "scale(1.0)");
         $("div[parentId='" + id + "']").css("background", "rgba(5,36,64,0)");
         $("div[parentId='" + id + "'] .text").css("color", "rgba(255,255,255,0)");
         $("div[parentId='" + id + "'] .overlayHr").css("opacity", "0");
