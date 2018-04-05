@@ -17,12 +17,9 @@ $(document).ready(function () {
                 } else {
                     divType = "small";
                 }
-                $('<div class="buttonDiv ' + divType + '" id="' + entryId + '" type="' + option.entryType + '"><img src="assets/tiles/' + option.imgSource + '.png" class="img-responsive buttonImage" parentId="' + entryId + '"/><div class="overlay" parentId="' + entryId + '"><div class="text"> <span class="title ' + entryId + '">' + option.entryName + '</span><br><span class="date">' + option.releaseDate + '</span><hr class="overlayHr">' + option.overlay + '</div></div></div>').appendTo('.contentRowInner');
-                $('<div modalNum="' + entryId + '" id="modal' + entryId + '" class="modal"><div class="container modal-content"><div class="row modalRow modalTitle text-center" style="height:7%"><span class="close">&times;</span><p class="col-sm-12 modalText">' + option.entryName + '</p></div><div class="row modalRow modalBody" style="height:93%"><div class="modalBlock" id="modalBlock' + entryId + '"></div></div></div></div>').appendTo('body');
+                $('<div class="buttonDiv ' + divType + '" id="' + entryId + '" title="' + option.entryName + '" type="' + option.entryType + '"><img src="assets/tiles/' + option.imgSource + '.png" class="img-responsive buttonImage" parentId="' + entryId + '"/><div class="overlay" parentId="' + entryId + '"><div class="text"> <span class="title ' + entryId + '">' + option.entryName + '</span><br><span class="date">' + option.releaseDate + '</span><hr class="overlayHr">' + option.overlay + '</div></div></div>').appendTo('.contentRowInner');
             } else {
-                $('<div class="buttonDiv ' + divType + ' hidden" id="' + entryId + '" type="' + option.entryType + '"><img src="assets/tiles/' + option.imgSource + '.png" class="img-responsive buttonImage" parentId="' + entryId + '"/><div class="overlay" parentId="' + entryId + '"><div class="text"> <span class="title ' + entryId + '">' + option.entryName + '</span><br><span class="date">' + option.releaseDate + '</span><hr class="overlayHr">' + option.overlay + '</div></div> </div>').appendTo('.contentRowInner');   
-                
-                $('<div modalNum="' + entryId + '" id="modal' + entryId + '" class="modal"><div class="container modal-content"><div class="row modalRow modalTitle text-center" style="height:7%"><span class="close">&times;</span><p class="col-sm-12 modalText">' + option.entryName + '</p></div><div class="row modalRow modalBody" style="height:93%"><div class="modalBlock" id="modalBlock' + entryId + '"></div></div></div></div>').appendTo('body');
+                $('<div class="buttonDiv ' + divType + ' hidden" id="' + entryId + '" title="' + option.entryName + '" type="' + option.entryType + '"><img src="assets/tiles/' + option.imgSource + '.png" class="img-responsive buttonImage" parentId="' + entryId + '"/><div class="overlay" parentId="' + entryId + '"><div class="text"> <span class="title ' + entryId + '">' + option.entryName + '</span><br><span class="date">' + option.releaseDate + '</span><hr class="overlayHr">' + option.overlay + '</div></div> </div>').appendTo('.contentRowInner');
             }
             entryCounter++;
         });
@@ -67,7 +64,7 @@ $(document).ready(function () {
     
     
     
-    // Displays only the X newest entries
+    // Restores page back to base state, i.e. 6 Newest Entries
     $(document).on("click", ".navbar-header, #works, #new", function(e) {
         e.preventDefault();
         history.replaceState('data', '', 'http://L80.io');
@@ -118,7 +115,7 @@ $(document).ready(function () {
 
     });
     
-    //Handles click events for each menu option. Some are new pages and some are toggles
+    //Handles click event for switching to ABOUT page
     $(document).on("click", "#about", function(e) {
         e.preventDefault(); 
        
@@ -183,7 +180,7 @@ $(document).ready(function () {
                         }
                         entryCounter++;
                         if (entryCounter === entrySize && entryCounter % 2 === 1) {
-                            console.log("final entry");
+                            //console.log("final entry"); //Here be coding stubs
                         }
                     });
             });
@@ -201,6 +198,8 @@ $(document).ready(function () {
         var id = $(this).attr("id");
         $("img[parentId='" + id + "']").css("background", "rgba(5,36,64,.8)");
         $("img[parentId='" + id + "']").css("transform", "scale(1.2)");
+        $("img[parentId='" + id + "']").removeClass('blur-out');
+        $("img[parentId='" + id + "']").addClass('blur-in');
         $("div[parentId='" + id + "']").css("background", "rgba(5,36,64,.8)");
         $("div[parentId='" + id + "'] .text").css("color", "rgba(255,255,255,1)");
         $("div[parentId='" + id + "'] .overlayHr").css("opacity", "1");
@@ -211,6 +210,8 @@ $(document).ready(function () {
         var id = $(this).attr("id"); 
         $("img[parentId='" + id + "']").css("background", "rgba(5,36,64,.8)");
         $("img[parentId='" + id + "']").css("transform", "scale(1.0)");
+        $("img[parentId='" + id + "']").removeClass('blur-in');
+        $("img[parentId='" + id + "']").addClass('blur-out');
         $("div[parentId='" + id + "']").css("background", "rgba(5,36,64,0)");
         $("div[parentId='" + id + "'] .text").css("color", "rgba(255,255,255,0)");
         $("div[parentId='" + id + "'] .overlayHr").css("opacity", "0");
@@ -239,34 +240,19 @@ $(document).ready(function () {
     });
     
     
-    
-    
-    // toggles resume visibility on About
-    $(document).on("click", "#resumeButton", function(e) {
-        e.preventDefault();  
-        $(".resumeRow").toggle();
-        var $this = $(this);
-		$this.toggleClass('showResume');
-		if($this.hasClass('showResume')){
-			$this.text('Show Resume');			
-		} else {
-			$this.text('Hide Resume');
-		}
-    });   
-    
-
     var id = 0;
+    var title = "";
     // When the user clicks on the button, open the modal 
     $(document).on("click", ".buttonDiv", function(e) {
         e.preventDefault();
         id = $(this).attr("id");
-        var modal = $("div[id='modal" + id + "']");
+        title = $(this).attr("title");
+        var modal = $("div[id='modal']");
         $(".modalOverlay").fadeIn(500);
 		$(modal).addClass('active');
 		$("#mainContent, #mainNavbar").css("pointer-events", "none");
-		/*$("#mainContent, #mainNavbar").removeClass('blur-out');
-		$("#mainContent, #mainNavbar").addClass('blur-in');*/
-        $("#modalBlock" + id).load("html/content/" + id + ".html"); // Moved from doing all at once
+        $(".modalText").text(title);
+        $("#modalBlock").load("html/content/" + id + ".html"); // Moved from doing all at once
         history.replaceState('data', '', 'http://L80.io/#' + id);
     });
 
@@ -275,17 +261,10 @@ $(document).ready(function () {
         e.preventDefault();
         $(".modal").removeClass('active');
         $(".modalOverlay").fadeOut(500);
+        $("#modalBlock").empty(); // Clears modal for next open
+        $(".modalText").text("");
 		$("#mainContent, #mainNavbar").css("pointer-events", "auto");
-		/*$("#mainContent, #mainNavbar").removeClass('blur-in');
-		$("#mainContent, #mainNavbar").addClass('blur-out');*/
         history.replaceState('data', '', 'http://L80.io');
-        /*id = 0;
-        var id2 = $("h2").attr("id");
-        if (id2.length > 1) {
-            history.replaceState('data', '', 'http://L80.io/#' + id2);
-        } else {
-            history.replaceState('data', '', 'http://L80.io');
-        }*/
     });
 
     // When the user clicks anywhere outside of the modal, close it
@@ -294,16 +273,10 @@ $(document).ready(function () {
         if (!$(event.target).closest(".modal-content, .buttonDiv").length) {
             $("body").find(".modal").removeClass('active');
             $(".modalOverlay").fadeOut(500);
+            $("#modalBlock").empty();
+            $(".modalText").text("");
 			$("#mainContent, #mainNavbar").css("pointer-events", "auto");
             history.replaceState('data', '', 'http://L80.io');
-			/*$("#mainContent, #mainNavbar").removeClass('blur-in');
-			$("#mainContent, #mainNavbar").addClass('blur-out');*/
-            /*var id = $("h2").attr("id");
-            if (id.length > 1) {
-                history.replaceState('data', '', 'http://L80.io/#' + id);
-            } else {
-                history.replaceState('data', '', 'http://L80.io');
-            }*/
         }
     });
 });
