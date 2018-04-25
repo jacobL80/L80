@@ -198,8 +198,8 @@ $(document).ready(function () {
         var id = $(this).attr("id");
         $("img[parentId='" + id + "']").css("background", "rgba(5,36,64,.8)");
         $("img[parentId='" + id + "']").css("transform", "scale(1.2)");
-        $("img[parentId='" + id + "']").removeClass('blur-out');
         $("img[parentId='" + id + "']").addClass('blur-in');
+        
         $("div[parentId='" + id + "']").css("background", "rgba(5,36,64,.8)");
         $("div[parentId='" + id + "'] .text").css("color", "rgba(255,255,255,1)");
         $("div[parentId='" + id + "'] .overlayHr").css("opacity", "1");
@@ -211,7 +211,7 @@ $(document).ready(function () {
         $("img[parentId='" + id + "']").css("background", "rgba(5,36,64,.8)");
         $("img[parentId='" + id + "']").css("transform", "scale(1.0)");
         $("img[parentId='" + id + "']").removeClass('blur-in');
-        $("img[parentId='" + id + "']").addClass('blur-out');
+        
         $("div[parentId='" + id + "']").css("background", "rgba(5,36,64,0)");
         $("div[parentId='" + id + "'] .text").css("color", "rgba(255,255,255,0)");
         $("div[parentId='" + id + "'] .overlayHr").css("opacity", "0");

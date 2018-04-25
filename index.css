@@ -378,13 +378,6 @@ h1 {
     animation: blur .2s forwards;
 }
 
-.blur-out {
-    -webkit-animation: blur-out .2s forwards;
-    -moz-animation: blur-out .2s forwards;
-    -o-animation: blur-out .2s forwards;
-    animation: blur-out .2s forwards;
-}
-
 @-webkit-keyframes blur {
     0% {
         -webkit-filter: blur(0px);
@@ -454,78 +447,6 @@ h1 {
         -o-filter: blur(4px);
         -ms-filter: blur(4px);
         filter: blur(4px);
-    }
-}
-
-@-webkit-keyframes blur-out {
-    0% {
-        -webkit-filter: blur(4px);
-        -moz-filter: blur(4px);
-        -o-filter: blur(4px);
-        -ms-filter: blur(4px);
-        filter: blur(4px);
-    }
-
-    100% {
-        -webkit-filter: blur(0px);
-        -moz-filter: blur(0px);
-        -o-filter: blur(0px);
-        -ms-filter: blur(0px);
-        filter: blur(0px);
-    }
-}
-
-@-moz-keyframes blur-out {
-    0% {
-        -webkit-filter: blur(4px);
-        -moz-filter: blur(4px);
-        -o-filter: blur(4px);
-        -ms-filter: blur(4px);
-        filter: blur(4px);
-    }
-
-    100% {
-        -webkit-filter: blur(0px);
-        -moz-filter: blur(0px);
-        -o-filter: blur(0px);
-        -ms-filter: blur(0px);
-        filter: blur(0px);
-    }
-}
-
-@-o-keyframes blur-out {
-    0% {
-        -webkit-filter: blur(4px);
-        -moz-filter: blur(4px);
-        -o-filter: blur(4px);
-        -ms-filter: blur(4px);
-        filter: blur(4px);
-    }
-
-    100% {
-        -webkit-filter: blur(0px);
-        -moz-filter: blur(0px);
-        -o-filter: blur(0px);
-        -ms-filter: blur(0px);
-        filter: blur(0px);
-    }
-}
-
-@keyframes blur-out {
-    0% {
-        -webkit-filter: blur(4px);
-        -moz-filter: blur(4px);
-        -o-filter: blur(4px);
-        -ms-filter: blur(4px);
-        filter: blur(4px);
-    }
-
-    100% {
-        -webkit-filter: blur(0px);
-        -moz-filter: blur(0px);
-        -o-filter: blur(0px);
-        -ms-filter: blur(0px);
-        filter: blur(0px);
     }
 }
 
